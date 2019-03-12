@@ -1,0 +1,116 @@
+$ git log --stat|cat
+commit b9a52b68d9b818f75c219a14bdf39117265cc1c3
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:43:49 2019 +0200
+
+    kaikki lisatty
+
+ tiedostoja/file1 | 1 -
+ tiedostoja/file2 | 0
+ 2 files changed, 1 deletion(-)
+
+commit 55ea34952f514583f30140bc0bffd5fb96fe24c8
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:39:48 2019 +0200
+
+    muokattu ja poistettu
+
+ tiedostoja/file1 | 1 +
+ tiedostoja/file2 | 0
+ 2 files changed, 1 insertion(+)
+
+commit 0abe22b8c98accb0f10999861a4a4dadce34c45e
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:38:19 2019 +0200
+
+    kaikki lisatty
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3c6bdd4a6c8b920296f61ba183f86fe10b684abc
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:26:15 2019 +0200
+
+    lisayksia ja poistoja
+
+ eka.txt    | 5 +++--
+ kolmas.txt | 2 +-
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit b244ca5ee8959612467e941bd7b744deb0ebc0b9
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:22:31 2019 +0200
+
+    uudelleen nimenta
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a71aba22f5858686128f4d73cd89ae9dbd5582a4
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:21:31 2019 +0200
+
+    poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 75540e31e8eca82de33e8448da441b8d14c61765
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:19:01 2019 +0200
+
+    poistettu tekstia
+
+ tiedosto.txt | 20 --------------------
+ 1 file changed, 20 deletions(-)
+
+commit 48b96925b27cb0bcff0eade2cae152086dcc73da
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:15:36 2019 +0200
+
+    paljon tekstia
+
+ tiedosto.txt | 26 +++++++++++++++++++++++++-
+ 1 file changed, 25 insertions(+), 1 deletion(-)
+
+commit 50fca1896130d00f5284cd686ee62101c07a4c34
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:09:23 2019 +0200
+
+    muutos ja lisäys
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 75f59a6ecbdde2747a1ab9de7ca60bbe42a86382
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 13:02:35 2019 +0200
+
+    kolmas lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d973bc7929fdad34b0fd570ee3884361762223d0
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 12:56:27 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 4 ++++
+ toinen.txt   | 0
+ 2 files changed, 4 insertions(+)
+
+commit 496b4623c7a4f01620b2638ee1d9699a8a7b5b2e
+Author: Ossi Lehtonen <ossi.j.lehtonen@helsinki.fi>
+Date:   Tue Mar 12 12:49:27 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
