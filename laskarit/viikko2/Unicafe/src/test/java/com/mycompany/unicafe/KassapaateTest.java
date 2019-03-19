@@ -28,6 +28,7 @@ public class KassapaateTest {
         kortti = new Maksukortti(400);
     }
     
+    //ALKUTESTIT
     @Test
     public void luotuKassapaateOlemassa() {
         assertTrue(kassapaate!=null);      
@@ -38,20 +39,24 @@ public class KassapaateTest {
         assertEquals(100000,kassapaate.kassassaRahaa());
     }
     
-    @Test
+     @Test
     public void edullisiaLounaitaEiOleMyyty(){
         assertEquals(0, kassapaate.edullisiaLounaitaMyyty());
     }
     
+    
+    //KATEISMAKSUT
+   
+    
     @Test
-    public void myytyjenEdullistenMaaraKasvaa(){
+    public void myytyjenEdullistenMaaraKasvaaKateisMaksulla(){
         kassapaate.syoEdullisesti(300);
         
         assertEquals(1,kassapaate.edullisiaLounaitaMyyty());
     }
     
      @Test
-    public void myytyjenMaukkaidenMaaraKasvaa(){
+    public void myytyjenMaukkaidenMaaraKasvaaKateisMaksulla(){
         kassapaate.syoMaukkaasti(400);
         
         assertEquals(1,kassapaate.maukkaitaLounaitaMyyty());
@@ -87,6 +92,10 @@ public class KassapaateTest {
     }
     
     
+    
+    
+    
+    //KORTTIMAKSUT
     @Test
     public void edullisenLounaanKorttiMaksuOttaaKortiltaRahaa(){
         kassapaate.syoEdullisesti(kortti);
