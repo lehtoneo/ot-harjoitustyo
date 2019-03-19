@@ -14,4 +14,19 @@
                 <goal>test</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-testikattavuusUusi</actionName>
+            <displayName>testikattavuusUusi</displayName>
+            <goals>
+                <goal>test</goal>
+                <goal>jacoco:report</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-compile</actionName>
+            <displayName>compile</displayName>
+            <goals>
+                <goal>compile</goal>
+            </goals>
+        </action>
     </actions>
