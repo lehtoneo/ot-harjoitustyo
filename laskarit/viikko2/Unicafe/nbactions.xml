@@ -7,4 +7,11 @@
                 <goal>jacoco:report</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-testaa</actionName>
+            <displayName>testaa</displayName>
+            <goals>
+                <goal>test</goal>
+            </goals>
+        </action>
     </actions>
