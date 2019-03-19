@@ -302,20 +302,7 @@ public class KassapaateTest {
    
    
     
-    //TODO
-   //myydyt palauttaa oikein
-   
-   //kateismaksuun
-   //jos maksu ei ole riittävä: kassassa oleva rahamäärä ei muutu!! x?
-   //kaikki rahat palautetaan vaihtorahana x!!! ja myytyjen lounaiden määrässä ei muutosta x!!
-   
-   
-   
-   
-    //jos kortilla on tarpeeksi rahaa, veloitetaan summa kortilta x ja PALAUTETAAN TRUE x
-    //jos kortilla ei ole tarpeeksi rahaa, kortin rahamäärä ei muutu x, myytyjen lounaiden määrä muuttumaton x ja palautetaan false x
-    //kassassa oleva rahamäärä ei muutu kortilla ostettaessa x
-    //kortille rahaa ladattaessa kortin saldo muuttuu x ja kassassa oleva rahamäärä kasvaa ladatulla summalla x
+  
     
     
     
