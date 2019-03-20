@@ -1,5 +1,7 @@
 package UI;
 
+import dao.UserDAO;
+import domain.User;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -18,6 +20,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 // This is the controller for log in screen
@@ -25,19 +29,42 @@ import javafx.stage.Stage;
 
 public class LogINController implements Initializable {
     
-   
+    @FXML
+    Label status;
+    
+    @FXML
+    TextField usernameField;
+    
+    @FXML
+    PasswordField passwordField;
     
     @FXML
     Button LogIn;
     
     @FXML
-    private void logInButtonAction(ActionEvent event) throws IOException {
+    Button questLogIn;
+    
+    @FXML
+    private void logInButtonAction(ActionEvent event) throws IOException, SQLException {
         //Kirjautuu jos tiedot oikein
-       
-    startGame(new Stage());
+    if(doesUsernameExist(getUsernameField()) && isPasswordCorrect(getPasswordField())){
+        startGame(new Stage());
+    }
+    
         
         
     }
+    
+    
+     @FXML
+    private void questLogInButtonAction(ActionEvent event) throws IOException{
+        //Kirjautuu jos tiedot oikein
+    
+       startGame(new Stage());
+        
+        
+    }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -67,6 +94,51 @@ public class LogINController implements Initializable {
        Stage logInScreenStage = (Stage) LogIn.getScene().getWindow();
        logInScreenStage.close();
    }
+   
+   
+   public String getUsernameField(){
+       return usernameField.getText();
+   }
+   
+   
+    public String getPasswordField(){
+       return passwordField.getText();
+       
+   }
+    
+    
+   public boolean doesUsernameExist(String username) throws SQLException{
+        UserDAO dao = new UserDAO();
+        User user = dao.readWithUsername(username);
+        
+        if(user == null){
+            return false;
+        }
+        
+        return true;
+        
+       
+   }
+   
+   
+   public boolean isPasswordCorrect(String username) throws SQLException{
+       
+       UserDAO dao = new UserDAO();
+       
+       User user = dao.readWithUsername(username);
+       
+       if(user.getPassword() == getPasswordField()){
+           return true;
+       }
+       
+       return false;
+       
+   }
+   
+   
+   
+   
+   
    
    
 }
