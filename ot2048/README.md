@@ -1,6 +1,6 @@
   # 2048App #
   
-Sovellus on melko yksinkertainen yksinpeli. Pelissä on 4x4 kokoinen ruudukko, jonka jokaisessa "laatassa" on numero. Numeroita tulee yhdistellä siten, että samat numerot yhdistyvät toisiinsa. Pelin tavoite on muodostaa 2048 luvun sisältävä laatta. Tämän jälkeen peliä voi kuitenkin jatkaa muodostaen isompiarvoisia laattoja.
+Sovellus on melko yksinkertainen yksinpeli. Pelissä on 4x4 kokoinen ruudukko, jonka jokaisessa "laatassa" on numero. Numeroita tulee yhdistellä siten, että samat numerot yhdistyvät toisiinsa. Pelin tavoite on muodostaa luvun 2048 arvoinen laatta. Tämän jälkeen peliä voi kuitenkin jatkaa muodostaen isompiarvoisia laattoja.
   
   ## Dokumentaatio
 
