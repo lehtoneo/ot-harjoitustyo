@@ -10,7 +10,7 @@ Sovellukseen voi kirjautua joko omalla käyttäjätunnuksellaan tai "questina".
 
 ## Käyttöliittymäluonnos
 
-Sovelluksessa on neljä eri näkymää (Log in, create acc, game, highscores)
+Sovelluksessa on neljä eri näkymää (Log in, create acc, game)
 
 (KUVA)
 
@@ -33,5 +33,20 @@ Sovelluksessa on neljä eri näkymää (Log in, create acc, game, highscores)
  - Käyttäjä voi pelata peliä
  
    - Pelin voi aloittaa alusta painamalla "New Game"
+   
+ - Käyttäjä voi kirjautua ulos pelistä
+ 
+ 
+ ## Jatkokehitysideoita
+ 
+ - Lisätään peliin highscoret
+   
+   - Highscoreille tehdään oma ikkuna, johon päästään joko kirjautumisikkunasta tai peli-ikkunasta
+   
+ - Lisätään animaatioita
+   - Esim. laattojen yhdistämiselle
+   
+ - Lisätään kaksinpeli mahdollisuus
+ 
  
 
