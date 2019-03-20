@@ -6,7 +6,7 @@ Sovellus on melko yksinkertainen yksinpeli. Pelissä on 4x4 kokoinen ruudukko, j
 
 [Käyttöohje](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/Dokumentaatio/Kayttoohje.md)
 
-[Vaatimusmaarittely](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/Dokumentaatio/Vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/Dokumentaatio/Vaatimusmaarittely.md)
 
 [Arkkitehtuurikuvaus](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/Dokumentaatio/Arkkitehtuurikuvaus.md)
 
