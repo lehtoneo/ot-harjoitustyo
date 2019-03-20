@@ -1,5 +1,10 @@
-package com.mycompany.ot2048;
+package UI;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -8,16 +13,25 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class MainApp extends Application {
 
+
+
+
+public class MainApp extends Application{
+
+   
+   
+    
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
+        
+        
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/LogIn.fxml"));
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
         
-        stage.setTitle("JavaFX and Maven");
+        stage.setTitle("Log IN");
         stage.setScene(scene);
         stage.show();
     }
@@ -33,5 +47,17 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    
+   
 
-}
+    
+    
+
+    
+    
+ 
+        
+        
+    }
+
+
