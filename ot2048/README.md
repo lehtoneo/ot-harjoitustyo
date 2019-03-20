@@ -1,3 +1,3 @@
   # 2048App #
   
-  # Dokumentaatio
+  ## Dokumentaatio
