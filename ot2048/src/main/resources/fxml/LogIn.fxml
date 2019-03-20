@@ -12,6 +12,6 @@
       <Button fx:id="questLogIn" layoutX="279.0" layoutY="237.0" mnemonicParsing="false" onAction="#questLogInButtonAction" text="Log in as a quest" />
       <TextField fx:id="usernameField" layoutX="64.0" layoutY="81.0" promptText="Username" />
       <PasswordField fx:id="passwordField" layoutX="64.0" layoutY="148.0" promptText="Password" />
-      <Label fx:id="status" layoutX="211.0" layoutY="28.0" prefHeight="17.0" prefWidth="96.0" text="Label" />
+      <Label fx:id="status" layoutX="62.0" layoutY="28.0" prefHeight="17.0" prefWidth="245.0" textFill="RED" />
     </children>
 </AnchorPane>

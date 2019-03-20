@@ -49,6 +49,9 @@ public class LogINController implements Initializable {
         //Kirjautuu jos tiedot oikein
     if(doesUsernameExist(getUsernameField()) && isPasswordCorrect(getPasswordField())){
         startGame(new Stage());
+    } else {
+        
+        status.setText("Wrong username or password");
     }
     
         
