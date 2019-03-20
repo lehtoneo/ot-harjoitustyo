@@ -10,7 +10,7 @@ Sovellukseen voi kirjautua joko omalla käyttäjätunnuksellaan tai "questina".
 
 ## Käyttöliittymäluonnos
 
-Sovelluksessa on neljä eri näkymää (Log in, create acc, game)
+Sovelluksessa on kolme eri näkymää (Log in, create acc, game)
 
 (KUVA)
 
