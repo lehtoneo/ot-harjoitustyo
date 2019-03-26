@@ -4,13 +4,13 @@ Sovellus on melko yksinkertainen yksinpeli. Pelissä on 4x4 kokoinen ruudukko, j
   
   ## Dokumentaatio
 
-[Käyttöohje](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/Dokumentaatio/Kayttoohje.md)
+[Käyttöohje](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/Kayttoohje.md)
 
-[Vaatimusmäärittely](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/Dokumentaatio/Vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/Vaatimusmaarittely.md)
 
-[Arkkitehtuurikuvaus](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/Dokumentaatio/Arkkitehtuurikuvaus.md)
+[Arkkitehtuurikuvaus](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/Arkkitehtuurikuvaus.md)
 
-[Testausdokumentti](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/Dokumentaatio/Testausdokumentti.md)
+[Testausdokumentti](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/Testausdokumentti.md)
 
-[Työaikakirjanpito](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/Dokumentaatio/tuntikirjanpito.md)
+[Työaikakirjanpito](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/tuntikirjanpito.md)
 
