@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author ossij
  */
-public class UserDAO implements Dao<User, Integer> { 
+public class UserDao implements Dao<User, String> { 
 
     @Override
     public void create(User user) throws SQLException {
@@ -36,28 +36,16 @@ public class UserDAO implements Dao<User, Integer> {
     }
 
     @Override
-    public User read(Integer key) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public User update(User object) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void delete(Integer key) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public List<User> list() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
    
-    public User readWithUsername(String username) throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
+  
+
+    @Override
+    public User read(String username) throws SQLException {
+         Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
         
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM user WHERE username = ?");
         stmt.setString(1, username);
@@ -74,6 +62,16 @@ public class UserDAO implements Dao<User, Integer> {
         connection.close();
         
         return new User(rs.getString("Username"), rs.getString("Password"));
+    }
+
+    @Override
+    public void delete(String key) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public User update(User object) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

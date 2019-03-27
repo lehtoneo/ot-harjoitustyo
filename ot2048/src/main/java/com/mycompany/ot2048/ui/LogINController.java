@@ -1,9 +1,9 @@
 package com.mycompany.ot2048.ui;
 
-import com.mycompany.ot2048.dao.UserDAO;
+import com.mycompany.ot2048.dao.UserDao;
 import com.mycompany.ot2048.domain.User;
 import com.mycompany.ot2048.domain.User;
-import com.mycompany.ot2048.dao.UserDAO;
+import com.mycompany.ot2048.dao.UserDao;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -48,7 +48,7 @@ public class LogINController implements Initializable {
     
     @FXML
     private void logInButtonAction(ActionEvent event) throws IOException, SQLException {
-        //Kirjautuu jos tiedot oikein
+        
         if(doesUsernameExist(getUsernameField()) && isPasswordCorrect(getPasswordField())) { 
             startGame(new Stage());
     } else {
@@ -63,7 +63,7 @@ public class LogINController implements Initializable {
     
      @FXML
     private void questLogInButtonAction(ActionEvent event) throws IOException { 
-        //Kirjautuu jos tiedot oikein
+        
     
             startGame(new Stage());
         
@@ -113,8 +113,8 @@ public class LogINController implements Initializable {
     
     
    public boolean doesUsernameExist(String username) throws SQLException{
-        UserDAO dao = new UserDAO();
-        User user = dao.readWithUsername(username);
+        UserDao userDao = new UserDao();
+        User user = userDao.read(username);
         
         if(user == null){
             return false;
@@ -128,9 +128,9 @@ public class LogINController implements Initializable {
    
    public boolean isPasswordCorrect(String username) throws SQLException{
        
-       UserDAO dao = new UserDAO();
+       UserDao userDao = new UserDao();
        
-       User user = dao.readWithUsername(username);
+       User user = userDao.read(username);
        
        if(user.getPassword() == getPasswordField()){
            return true;

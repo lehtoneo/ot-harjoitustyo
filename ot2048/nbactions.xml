@@ -46,5 +46,20 @@
                 <goal>exec:java</goal>
                 <goal>-Dexec.mainClass=com.mycompany.ot2048.ui.SetUpLogInUI</goal>
             </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-testikattavuus</actionName>
+            <displayName>testikattavuus</displayName>
+            <goals>
+                <goal>test</goal>
+                <goal>jacoco:report</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-testaa</actionName>
+            <displayName>testaa</displayName>
+            <goals>
+                <goal>test</goal>
+            </goals>
         </action>        
     </actions>

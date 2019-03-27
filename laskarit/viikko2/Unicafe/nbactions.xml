@@ -29,4 +29,13 @@
                 <goal>compile</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-exec</actionName>
+            <displayName>exec</displayName>
+            <goals>
+                <goal>compile</goal>
+                <goal>exec:java</goal>
+                <goal>-Dexec.mainClass=com.mycmpany.unicafe.Paaohjelma</goal>
+            </goals>
+        </action>
     </actions>
