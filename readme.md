@@ -25,7 +25,7 @@ Testit suoritetaan komennolla (niitä on vasta pari)
 mvn test
 ```
 
-Testikattavuusraportti luodaan komennolla
+Testikattavuusraportin voi luoda komennolla
 
 ```
 mvn jacoco:report
