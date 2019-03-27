@@ -10,5 +10,5 @@
 |       | 1    |   Jatkoin käyttöliittymän tekemistä siihen vaiheeseen, että peli-ikkunaan pääsee nyt (vain) questina    |
 
 
-| yht   | 10   | | 
+| yht   | 10   |  | 
 
