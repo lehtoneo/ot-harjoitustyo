@@ -15,3 +15,20 @@ Sovellus on melko yksinkertainen yksinpeli. Pelissä on 4x4 kokoinen ruudukko, j
 
 [Työaikakirjanpito](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/tuntikirjanpito.md)
 
+## Komentorivitoiminnot
+
+### Testaus
+
+Testit suoritetaan komennolla (niitä on vasta pari)
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
+
+Kattavuusraportin saa auki avaamalla selaimessa tiedoston _target/site/jacoco/index.html_
