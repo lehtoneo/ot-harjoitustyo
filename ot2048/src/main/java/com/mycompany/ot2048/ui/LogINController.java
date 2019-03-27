@@ -1,7 +1,9 @@
-package ui;
+package com.mycompany.ot2048.ui;
 
-import dao.UserDAO;
-import domain.User;
+import com.mycompany.ot2048.dao.UserDAO;
+import com.mycompany.ot2048.domain.User;
+import com.mycompany.ot2048.domain.User;
+import com.mycompany.ot2048.dao.UserDAO;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -47,11 +49,11 @@ public class LogINController implements Initializable {
     @FXML
     private void logInButtonAction(ActionEvent event) throws IOException, SQLException {
         //Kirjautuu jos tiedot oikein
-    if(doesUsernameExist(getUsernameField()) && isPasswordCorrect(getPasswordField())){
-        startGame(new Stage());
+        if(doesUsernameExist(getUsernameField()) && isPasswordCorrect(getPasswordField())) { 
+            startGame(new Stage());
     } else {
         
-        status.setText("Wrong username or password");
+            status.setText("Wrong username or password");
     }
     
         
@@ -60,25 +62,25 @@ public class LogINController implements Initializable {
     
     
      @FXML
-    private void questLogInButtonAction(ActionEvent event) throws IOException{
+    private void questLogInButtonAction(ActionEvent event) throws IOException { 
         //Kirjautuu jos tiedot oikein
     
-       startGame(new Stage());
+            startGame(new Stage());
         
         
     }
     
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) { 
        
         
         
     }
 
 
-   public void startGame(Stage stage) throws IOException{
-       Parent root = FXMLLoader.load(getClass().getResource("/fxml/Game.fxml"));
+   public void startGame(Stage stage) throws IOException { 
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Game.fxml"));
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");

@@ -1,4 +1,4 @@
-package ui;
+package com.mycompany.ot2048.ui;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 
 
 
-public class MainApp extends Application{
+public class SetUpLogInUI extends Application {
 
    
    
@@ -47,17 +47,7 @@ public class MainApp extends Application{
     public static void main(String[] args) {
         launch(args);
     }
-    
-   
 
-    
-    
-
-    
-    
- 
-        
-        
-    }
+}
 
 

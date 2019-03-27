@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package com.mycompany.ot2048.domain;
 
 /**
  *
@@ -14,7 +14,7 @@ public class User {
     String username;
     String password;
     
-    public User(String username, String password){
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
     }

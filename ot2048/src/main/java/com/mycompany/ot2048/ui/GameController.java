@@ -1,4 +1,4 @@
-package ui;
+package com.mycompany.ot2048.ui;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

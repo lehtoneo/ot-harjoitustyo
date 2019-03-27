@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package com.mycompany.ot2048.dao;
 
-import domain.User;
+import com.mycompany.ot2048.domain.User;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author ossij
  */
-public class UserDAO implements Dao<User,Integer>{
+public class UserDAO implements Dao<User, Integer> { 
 
     @Override
     public void create(User user) throws SQLException {
@@ -57,13 +57,13 @@ public class UserDAO implements Dao<User,Integer>{
     
    
     public User readWithUsername(String username) throws SQLException {
-         Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
+        Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
         
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM user WHERE username = ?");
         stmt.setString(1, username);
         ResultSet rs = stmt.executeQuery();
         
-        if(!rs.next()) {
+        if (!rs.next()) { 
             return null;
         }
         

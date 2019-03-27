@@ -30,5 +30,21 @@
                 <goal>jxr:jxr</goal>
                 <goal>checkstyle:checkstyle</goal>
             </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-compile</actionName>
+            <displayName>compile</displayName>
+            <goals>
+                <goal>compile</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-exec1</actionName>
+            <displayName>exec1</displayName>
+            <goals>
+                <goal>compile</goal>
+                <goal>exec:java</goal>
+                <goal>-Dexec.mainClass=com.mycompany.ot2048.ui.SetUpLogInUI</goal>
+            </goals>
         </action>        
     </actions>
