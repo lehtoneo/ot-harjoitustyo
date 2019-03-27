@@ -2,3 +2,5 @@
 ot2048/target
 /ot2048/nbproject/
 ot2048/nbactions.xml
+ot2048/kayttajatJaHighscoret.mv.db
+ot2048/kayttajatJaHighscoret.trace.db
