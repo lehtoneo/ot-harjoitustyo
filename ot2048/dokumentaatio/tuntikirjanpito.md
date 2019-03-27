@@ -8,7 +8,5 @@
 |       | 2    |   Koitin saada ohjelman käynnistymään komennolla "mvn compile exec:java -Dexec.mainClass=pakkaus.Paaohjelma"   |
 |       | 1    |   Yhdistin h2 tietokannan projektiin   |
 |       | 1    |   Jatkoin käyttöliittymän tekemistä siihen vaiheeseen, että peli-ikkunaan pääsee nyt (vain) questina    |
-
-
 | yht   | 10   |  | 
 
