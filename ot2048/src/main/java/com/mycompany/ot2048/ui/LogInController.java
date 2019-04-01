@@ -29,7 +29,7 @@ import javafx.stage.Stage;
 // This is the controller for log in screen
 
 
-public class LogINController implements Initializable {
+public class LogInController implements Initializable {
     
     @FXML
     Label status;
@@ -41,7 +41,7 @@ public class LogINController implements Initializable {
     PasswordField passwordField;
     
     @FXML
-    Button LogIn;
+    Button logIn;
     
     @FXML
     Button questLogIn;
@@ -96,7 +96,7 @@ public class LogINController implements Initializable {
    
    public void closeLogInScreen(){
        
-       Stage logInScreenStage = (Stage) LogIn.getScene().getWindow();
+       Stage logInScreenStage = (Stage) logIn.getScene().getWindow();
        logInScreenStage.close();
    }
    

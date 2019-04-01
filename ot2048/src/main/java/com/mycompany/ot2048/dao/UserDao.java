@@ -45,7 +45,7 @@ public class UserDao implements Dao<User, String> {
 
     @Override
     public User read(String username) throws SQLException {
-         Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
+        Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
         
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM user WHERE username = ?");
         stmt.setString(1, username);
