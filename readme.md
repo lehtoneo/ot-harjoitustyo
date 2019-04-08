@@ -15,4 +15,38 @@ Sovellus on melko yksinkertainen yksinpeli. Pelissä on 4x4 kokoinen ruudukko, j
 
 [Työaikakirjanpito](https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/tuntikirjanpito.md)
 
+## Komentorivitoiminnot
+
+### Testaus
+
+Testit voi suorittaa komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
+
+Jos ylläoleva testikattavuusraportin luonti ei onnistu jostain syystä, voi yrittää ensin cleanata projektin eli antaa seuraavat komennot (samassa järjestyksessä)
+
+```
+mvn clean
+mvn jacoco:report
+```
+
+Testikattavuusraportin tulokset saa auki avaamalla selaimella tiedoston target/site/jacoco/index.html
+
+### Checkstyle
+
+Checkstylen havaitsemien virheiden määrä saadaan komennolla
+
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mikäli haluaa tutkia projektin mahdollisten checkstyle virheiden sijaintia ja/tai tyyppiä, voi avata  selaimella tiedoston _target/site/checkstyle.html_
 
