@@ -5,7 +5,7 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-    <suppress files="com.mycompany.ot2048.ui.LogInController.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="com.mycompany.ot2048.ui.GameController.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="com.mycompany.ot2048.ui.SetUpLogInUI.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="com.lehtoneo.ot2048.ui.LogInController.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="com.lehtoneo.ot2048.ui.GameController.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="com.lehtoneo.ot2048.ui.SetUpLogInUI.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>

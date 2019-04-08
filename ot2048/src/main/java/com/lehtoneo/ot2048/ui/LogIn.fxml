@@ -6,12 +6,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="295.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ot2048.ui.LogInController">
+<AnchorPane id="AnchorPane" prefHeight="295.0" prefWidth="409.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lehtoneo.ot2048.ui.LogInController">
     <children>
         <Button fx:id="logIn" layoutX="83.0" layoutY="183.0" onAction="#logInButtonAction" prefHeight="25.0" prefWidth="111.0" text="Log in" />
-      <Button fx:id="questLogIn" layoutX="279.0" layoutY="237.0" mnemonicParsing="false" onAction="#questLogInButtonAction" text="Log in as a quest" />
+      <Button fx:id="questLogIn" layoutX="85.0" layoutY="255.0" mnemonicParsing="false" onAction="#questLogInButtonAction" text="Log in as a quest" />
       <TextField fx:id="usernameField" layoutX="64.0" layoutY="81.0" promptText="Username" />
       <PasswordField fx:id="passwordField" layoutX="64.0" layoutY="148.0" promptText="Password" />
       <Label fx:id="status" layoutX="62.0" layoutY="28.0" prefHeight="17.0" prefWidth="245.0" textFill="RED" />
+      <Button fx:id="createNewUserButton" layoutX="237.0" layoutY="255.0" mnemonicParsing="false" onAction="#createNewUserButtonAction" prefHeight="17.0" prefWidth="139.0" text="Create a new user" />
     </children>
 </AnchorPane>

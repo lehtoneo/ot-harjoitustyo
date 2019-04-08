@@ -1,7 +1,8 @@
-package com.mycompany.ot2048.ui;
+package com.lehtoneo.ot2048.ui;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,11 +25,22 @@ public class SetUpLogInUI extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        
-        
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/LogIn.fxml"));
+//     Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
+//        
+//        PreparedStatement stmt = connection.prepareStatement("CREATE TABLE User (\n" +
+//"    id int NOT NULL AUTO_INCREMENT,\n" +
+//"    username varchar,\n" +
+//"    password varchar,\n" +
+//"    PRIMARY KEY (id)\n" +
+//");");
+//        
+//        stmt.executeUpdate();
+//        stmt.close();
+//        connection.close();
+        Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
         
         Scene scene = new Scene(root);
+ 
         scene.getStylesheets().add("/styles/Styles.css");
         
         stage.setTitle("Log IN");

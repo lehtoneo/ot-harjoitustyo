@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.ot2048.dao;
+package com.lehtoneo.ot2048.dao;
 
 import java.sql.*;
 import java.util.*;
@@ -11,7 +11,5 @@ import java.util.*;
 public interface Dao<T, K> {
     void create(T object) throws SQLException;
     T read(K key) throws SQLException;
-    T update(T object) throws SQLException;
-    void delete(K k) throws SQLException;
     List<T> list() throws SQLException;
 }

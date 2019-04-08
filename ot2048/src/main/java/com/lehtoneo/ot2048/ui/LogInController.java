@@ -1,9 +1,10 @@
-package com.mycompany.ot2048.ui;
+package com.lehtoneo.ot2048.ui;
 
-import com.mycompany.ot2048.dao.UserDao;
-import com.mycompany.ot2048.domain.User;
-import com.mycompany.ot2048.domain.User;
-import com.mycompany.ot2048.dao.UserDao;
+import com.lehtoneo.ot2048.dao.UserDao;
+import com.lehtoneo.ot2048.domain.User;
+import com.lehtoneo.ot2048.domain.User;
+import com.lehtoneo.ot2048.dao.UserDao;
+import com.lehtoneo.ot2048.domain.Ot2048Service;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -47,16 +48,38 @@ public class LogInController implements Initializable {
     Button questLogIn;
     
     @FXML
-    private void logInButtonAction(ActionEvent event) throws IOException, SQLException {
-        
-        if(doesUsernameExist(getUsernameField()) && isPasswordCorrect(getPasswordField())) { 
-            startGame(new Stage());
-    } else {
-        
-            status.setText("Wrong username or password");
+    Button createNewUserButton;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
     }
     
+    
+    @FXML
+    private void createNewUserButtonAction(ActionEvent event) throws IOException {
+        openCreateUserScreen(new Stage());
+    }
+    
+    @FXML
+    private void logInButtonAction(ActionEvent event) throws IOException, SQLException {
+        Ot2048Service service = new Ot2048Service();
         
+        User user = new User(getUsernameField(), getPasswordField());
+        
+        if(service.doesUsernameExist(user.getUsername())) {
+            
+            if(service.isPasswordCorrect(user)) {
+                startGame(new Stage());
+                
+            } else {
+                status.setText("Wrong username or password");
+            }
+            
+        } else {
+            
+            status.setText("Wrong username or password");
+            
+        }
         
     }
     
@@ -70,17 +93,10 @@ public class LogInController implements Initializable {
         
     }
     
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) { 
-       
-        
-        
-    }
 
 
    public void startGame(Stage stage) throws IOException { 
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Game.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
@@ -112,38 +128,18 @@ public class LogInController implements Initializable {
    }
     
     
-   public boolean doesUsernameExist(String username) throws SQLException{
-        UserDao userDao = new UserDao();
-        User user = userDao.read(username);
+   public void openCreateUserScreen(Stage stage) throws IOException { 
+        Parent root = FXMLLoader.load(getClass().getResource("CreateUser.fxml"));
         
-        if(user == null){
-            return false;
-        }
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/styles/Styles.css");
         
-        return true;
+        stage.setTitle("Create a new user");
+        stage.setScene(scene);
+        stage.show();
         
        
-   }
-   
-   
-   public boolean isPasswordCorrect(String username) throws SQLException{
-       
-       UserDao userDao = new UserDao();
-       
-       User user = userDao.read(username);
-       
-       if(user.getPassword() == getPasswordField()){
-           return true;
-       }
-       
-       return false;
-       
-   }
-   
-   
-   
-   
-   
-   
-   
+   }  
+    
+
 }

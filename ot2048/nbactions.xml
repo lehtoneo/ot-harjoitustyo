@@ -44,7 +44,7 @@
             <goals>
                 <goal>compile</goal>
                 <goal>exec:java</goal>
-                <goal>-Dexec.mainClass=com.mycompany.ot2048.ui.SetUpLogInUI</goal>
+                <goal>-Dexec.mainClass=com.lehtoneo.ot2048.ui.SetUpLogInUI</goal>
             </goals>
         </action>
         <action>

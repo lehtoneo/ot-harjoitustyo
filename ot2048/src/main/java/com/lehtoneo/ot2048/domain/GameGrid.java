@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.ot2048.domain;
+package com.lehtoneo.ot2048.domain;
 
 /**
  *

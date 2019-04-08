@@ -8,5 +8,9 @@
 |       | 2    |   Koitin saada ohjelman käynnistymään komennolla "mvn compile exec:java -Dexec.mainClass=pakkaus.Paaohjelma"   |
 |       | 1    |   Yhdistin h2 tietokannan projektiin   |
 |       | 1    |   Jatkoin käyttöliittymän tekemistä siihen vaiheeseen, että peli-ikkunaan pääsee nyt (vain) questina    |
-| yht   | 10   |  | 
-
+| 3.4   | 2     | Refaktoroin sovelluksen rakennetta|
+|       | 2    |   Jatkoin käyttöliittymää: Sovellukseen voi tehdä nyt käyttäjän ja kirjautua sillä peliin    |
+|       | 2    | Tein pakkauskaavion|
+|       | 1    | Lisäsin testejä, sekä poistin käyttöliittymän testikattavuusraportista|
+|       | 1    | Paransin koodin luettavuutta, sekä poistin käyttöliittymän rakentavan koodin checkstylestä |
+| yht   | 18   |  | 

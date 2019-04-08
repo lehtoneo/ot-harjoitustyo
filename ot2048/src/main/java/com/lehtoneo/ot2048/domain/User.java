@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.ot2048.domain;
+package com.lehtoneo.ot2048.domain;
 
 /**
  *
@@ -33,6 +33,45 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    public boolean isUserLegal() {
+        
+        if (isUsernameLegal() && isPasswordLegal()) {
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean isUsernameLegal() {
+        
+        if (username == null) {
+            return false;
+        }
+        
+        String usernameTrimmed = username.replaceAll("\\s", "");
+        
+        if (!usernameTrimmed.equals(username) || usernameTrimmed.length() < 4) {
+            return false;
+        }
+        return true;
+        
+    }
+    
+    public boolean isPasswordLegal() {
+        
+        if (password == null) {
+            return false;
+        }
+        
+        String passwordTrimmed = password.replaceAll("\\s", "");
+        
+        if (!passwordTrimmed.equals(password) || password.length() < 5) {
+            
+            return false;
+            
+        }
+        return true;
     }
     
     
