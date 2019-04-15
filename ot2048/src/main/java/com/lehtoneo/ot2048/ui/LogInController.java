@@ -99,8 +99,8 @@ public class LogInController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
         
         Scene scene = new Scene(root);
-        
-        stage.setTitle("Peli");
+        scene.getRoot().requestFocus();
+        stage.setTitle("Game");
         stage.setScene(scene);
         stage.show();
         

@@ -9,8 +9,10 @@ package com.lehtoneo.ot2048.ui;
 import com.lehtoneo.ot2048.domain.GameGrid;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
@@ -58,6 +60,7 @@ public class GameController implements Initializable {
     private Label threeThree;
     @FXML
     private GridPane grid;
+    
     
     
     private Label[][] labels;
@@ -120,7 +123,7 @@ public class GameController implements Initializable {
     }
     
     
-  @FXML  
+        @FXML  
         void keyPressed(KeyEvent event) {
             switch (event.getCode()) {
             
@@ -140,6 +143,7 @@ public class GameController implements Initializable {
                 break;
             
             case RIGHT:
+                System.out.println("jee");
                 gamegrid.moveRight();
                 update();
                 break;
@@ -170,6 +174,9 @@ public class GameController implements Initializable {
         
 
         
-    }    
+    }
+ 
+ 
+
     
 }
