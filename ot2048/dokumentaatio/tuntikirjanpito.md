@@ -13,4 +13,8 @@
 |       | 2    | Tein pakkauskaavion|
 |       | 1    | Lisäsin testejä, sekä poistin käyttöliittymän testikattavuusraportista|
 |       | 1    | Paransin koodin luettavuutta, sekä poistin käyttöliittymän rakentavan koodin checkstylestä |
+| 10.4  | 4    | Koodasin pelin sovellukseen, sitä pystyy pelaamaan näppäimillä |
+|       | 1    | Lisäsin testikattavuutta |
+|       |      | Refaktoroin koodia|
+| 15.4  | 1    | Tein sekvenssikaavion käyttäjänluomisesta |
 | yht   | 18   |  | 
