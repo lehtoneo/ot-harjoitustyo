@@ -13,7 +13,8 @@
       <Label fx:id="somethingIsWrongUsername" layoutX="153.0" layoutY="146.0" prefHeight="17.0" prefWidth="315.0" />
       <PasswordField fx:id="createUserPassword" layoutX="226.0" layoutY="220.0" promptText="enter password" />
       <PasswordField fx:id="createUserPasswordAgain" layoutX="226.0" layoutY="263.0" promptText="enter password again" />
-      <Label fx:id="somethingIsWrongPassword" layoutX="183.0" layoutY="200.0" prefHeight="17.0" prefWidth="225.0" />
-      <Label fx:id="everythingOk" layoutX="170.0" layoutY="83.0" prefHeight="17.0" prefWidth="243.0" />
+      <Label fx:id="somethingIsWrongPassword" layoutX="93.0" layoutY="200.0" prefHeight="17.0" prefWidth="387.0" textAlignment="CENTER" textFill="RED" />
+      <Label fx:id="everythingOk" layoutX="170.0" layoutY="83.0" prefHeight="17.0" prefWidth="243.0" textFill="#48b634" />
+      <Label fx:id="someThingIsWrongPasswordTwo" layoutX="103.0" layoutY="245.0" prefHeight="17.0" prefWidth="375.0" textAlignment="CENTER" textFill="RED" />
    </children>
 </AnchorPane>

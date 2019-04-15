@@ -37,11 +37,13 @@ public class SetUpLogInUI extends Application {
 //        stmt.executeUpdate();
 //        stmt.close();
 //        connection.close();
+        alustaTietokanta();
+
         Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
         
         Scene scene = new Scene(root);
  
-        scene.getStylesheets().add("/styles/Styles.css");
+    //    scene.getStylesheets().add("/styles/Styles.css");
         
         stage.setTitle("Log IN");
         stage.setScene(scene);
@@ -58,6 +60,21 @@ public class SetUpLogInUI extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+    
+    
+    private static void alustaTietokanta() {
+        
+           try (Connection conn = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "")) {
+            conn.prepareStatement("CREATE TABLE User(id INTEGER NOT NULL AUTO_INCREMENT, username VARCHAR, password VARCHAR);").executeUpdate();
+            
+            
+      
+            
+        } catch (SQLException ex) {
+            
+        }
+        
     }
 
 }

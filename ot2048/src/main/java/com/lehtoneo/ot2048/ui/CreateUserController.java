@@ -33,6 +33,8 @@ public class CreateUserController implements Initializable {
     @FXML
     Label somethingIsWrongPassword;
     @FXML
+    Label someThingIsWrongPasswordTwo;
+    @FXML
     TextField createUsername;
     @FXML
     PasswordField createUserPassword;
@@ -55,11 +57,13 @@ public class CreateUserController implements Initializable {
         
         if (!service.doPasswordFieldsMatch(createUserPassword.getText(), createUserPasswordAgain.getText())) {
             somethingIsWrongPassword.setText("Passwordfields don't match.");
+            everythingOk.setText("");
             return;
         }
         
         if (service.doesUsernameExist(createUsername.getText())) {
-            somethingIsWrongUsername.setText("Username is already in use, please select another username.");
+            somethingIsWrongUsername.setText("Username is already in use");
+            everythingOk.setText("");
             clearPasswordFields();
             return;
         }
@@ -69,9 +73,12 @@ public class CreateUserController implements Initializable {
         if (newUser.isUserLegal()) {
             service.createUser(newUser);
             everythingOk.setText("User created successfully!");
+            clearPasswordFields();
         } else {
             somethingIsWrongUsername.setText("Make sure your username is atleast 4 characters long");
-            somethingIsWrongPassword.setText("Make sure your password is atleast 5 characters long and it doesn't include spaces");
+            somethingIsWrongPassword.setText("Password has to be atleast 5 characters long");
+            someThingIsWrongPasswordTwo.setText("Password can't contain spaces");
+            everythingOk.setText("");
             clearPasswordFields();
         }
         

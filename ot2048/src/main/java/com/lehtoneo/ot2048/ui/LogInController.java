@@ -99,7 +99,6 @@ public class LogInController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
         
         stage.setTitle("Peli");
         stage.setScene(scene);
@@ -132,7 +131,6 @@ public class LogInController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("CreateUser.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
         
         stage.setTitle("Create a new user");
         stage.setScene(scene);
