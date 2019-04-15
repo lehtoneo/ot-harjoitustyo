@@ -43,7 +43,7 @@ public class SetUpLogInUI extends Application {
         
         Scene scene = new Scene(root);
  
-       scene.getStylesheets().add("/styles/Styles.css");
+       //scene.getStylesheets().add("/styles/Styles.css");
         
         stage.setTitle("Log IN");
         stage.setScene(scene);
