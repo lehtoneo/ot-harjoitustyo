@@ -145,3 +145,6 @@ CREATE TABLE User(id INTEGER NOT NULL AUTO_INCREMENT, username VARCHAR, password
 2019-04-15 10:42:20 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Table "USER" already exists; SQL statement:
 CREATE TABLE User(id INTEGER NOT NULL AUTO_INCREMENT, username VARCHAR, password VARCHAR); [42101-197]
+2019-04-15 10:52:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER" already exists; SQL statement:
+CREATE TABLE User(id INTEGER NOT NULL AUTO_INCREMENT, username VARCHAR, password VARCHAR); [42101-197]
