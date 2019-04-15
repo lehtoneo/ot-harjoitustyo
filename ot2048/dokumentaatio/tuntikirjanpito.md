@@ -16,5 +16,5 @@
 | 10.4  | 4    | Koodasin pelin sovellukseen, sitä pystyy pelaamaan näppäimillä |
 |       | 1    | Lisäsin testikattavuutta |
 |       |      | Refaktoroin koodia|
-| 15.4  | 1    | Tein sekvenssikaavion käyttäjänluomisesta |
+| 15.4  | 2    | Tein sekvenssikaavion käyttäjänluomisesta, sekä lisäsin kuvan arkkitehtuuri.md :hen |
 | yht   | 18   |  | 
