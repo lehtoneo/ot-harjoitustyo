@@ -95,5 +95,6 @@
             <Font size="29.0" />
          </font>
       </Label>
+      <Label layoutX="272.0" layoutY="66.0" prefHeight="17.0" prefWidth="267.0" text="Press arrow keys to play" textAlignment="CENTER" />
    </children>
 </AnchorPane>
