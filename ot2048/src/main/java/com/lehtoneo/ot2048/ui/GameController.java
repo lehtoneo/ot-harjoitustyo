@@ -143,7 +143,6 @@ public class GameController implements Initializable {
                 break;
             
             case RIGHT:
-                System.out.println("jee");
                 gamegrid.moveRight();
                 update();
                 break;
