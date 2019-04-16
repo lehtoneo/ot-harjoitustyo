@@ -13,8 +13,9 @@
 |       | 2    | Tein pakkauskaavion|
 |       | 1    | Lisäsin testejä, sekä poistin käyttöliittymän testikattavuusraportista|
 |       | 1    | Paransin koodin luettavuutta, sekä poistin käyttöliittymän rakentavan koodin checkstylestä |
-| 10.4  | 4    | Koodasin pelin sovellukseen, sitä pystyy pelaamaan näppäimillä |
+| 10.4  | 4    | Koodasin pelin sovellukseen, sitä pystyy nyt pelaamaan näppäimillä |
 |       | 1    | Lisäsin testikattavuutta |
-|       |      | Refaktoroin koodia|
+|       | 2     | Refaktoroin koodia|
 | 15.4  | 2    | Tein sekvenssikaavion käyttäjänluomisesta, sekä lisäsin kuvan arkkitehtuuri.md :hen |
-| yht   | 18   |  | 
+|       | 1    | Tein 1. releasen |
+| yht   | 28   |  | 
