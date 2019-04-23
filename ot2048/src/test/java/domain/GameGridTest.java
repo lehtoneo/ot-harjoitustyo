@@ -194,6 +194,15 @@ public class GameGridTest {
         assertEquals(1, shouldBeOne);
     }
     
+    
+    @Test
+    public void getCurrentPointsReturnsBiggestNumberInGrid() {
+        
+        int shouldBeFour = testGrid.getCurrentPoints();
+        
+        assertEquals(4, shouldBeFour);
+        
+    }
   
     
     
