@@ -18,4 +18,8 @@
 |       | 2     | Refaktoroin koodia|
 | 15.4  | 2    | Tein sekvenssikaavion käyttäjänluomisesta, sekä lisäsin kuvan arkkitehtuuri.md :hen |
 |       | 1    | Tein 1. releasen |
-| yht   | 28   |  | 
+|17.4   | 3    | Korjasin pari bugia pelistä, lisäsin highscorejen tallennuksen peliin|
+|       | 1    | Refaktoroin koodia |
+|       | 2    | Paransin testikattavuutta |
+|       | 1    | Paransin testejä |
+| yht   | 35   |  | 
