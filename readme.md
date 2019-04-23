@@ -28,14 +28,14 @@ mvn test
 Testikattavuusraportti luodaan komennolla
 
 ```
-mvn jacoco:report
+mvn test jacoco:report
 ```
 
 Jos ylläoleva testikattavuusraportin luonti ei onnistu jostain syystä, voi yrittää ensin cleanata projektin eli antaa seuraavat komennot (samassa järjestyksessä)
 
 ```
 mvn clean
-mvn jacoco:report
+mvn test jacoco:report
 ```
 
 Testikattavuusraportin tulokset saa auki avaamalla selaimella tiedoston target/site/jacoco/index.html
