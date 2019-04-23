@@ -50,8 +50,12 @@ public class LogInController implements Initializable {
     @FXML
     Button createNewUserButton;
     
+    
+    public Ot2048Service service;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        service = new Ot2048Service();
     }
     
     
@@ -62,13 +66,13 @@ public class LogInController implements Initializable {
     
     @FXML
     private void logInButtonAction(ActionEvent event) throws IOException, SQLException {
-        Ot2048Service service = new Ot2048Service();
         
         User user = new User(getUsernameField(), getPasswordField());
         
         if(service.doesUsernameExist(user.getUsername())) {
             
             if(service.isPasswordCorrect(user)) {
+                service.setLoggedIn(user);
                 startGame(new Stage());
                 
             } else {
@@ -84,10 +88,12 @@ public class LogInController implements Initializable {
     }
     
     
-     @FXML
-    private void questLogInButtonAction(ActionEvent event) throws IOException { 
-        
-    
+    @FXML
+    private void questLogInButtonAction(ActionEvent event) throws IOException, SQLException { 
+            UserDao dao = new UserDao();
+            User user = dao.makeANewQuestUser();
+            service.setLoggedIn(dao.makeANewQuestUser());
+            dao.create(user);
             startGame(new Stage());
         
         
@@ -95,15 +101,16 @@ public class LogInController implements Initializable {
     
 
 
-   public void startGame(Stage stage) throws IOException { 
-        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
-        
-        Scene scene = new Scene(root);
-        scene.getRoot().requestFocus();
-        stage.setTitle("Game");
-        stage.setScene(scene);
+    public void startGame(Stage stage) throws IOException, SQLException { 
+       
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
+        Parent root = loader.load();
+        GameController c = loader.getController();
+        stage.setScene(new Scene(root));
         stage.show();
-        
+        c.setOt2048Service(getService());
+
+       
         closeLogInScreen();
         
        
@@ -127,7 +134,7 @@ public class LogInController implements Initializable {
    }
     
     
-   public void openCreateUserScreen(Stage stage) throws IOException { 
+    public void openCreateUserScreen(Stage stage) throws IOException { 
         Parent root = FXMLLoader.load(getClass().getResource("CreateUser.fxml"));
         
         Scene scene = new Scene(root);
@@ -137,7 +144,11 @@ public class LogInController implements Initializable {
         stage.show();
         
        
-   }  
+   }
+   
+    public Ot2048Service getService() {
+       return this.service;
+   }
     
 
 }

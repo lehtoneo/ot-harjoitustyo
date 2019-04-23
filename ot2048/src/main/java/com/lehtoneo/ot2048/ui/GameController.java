@@ -6,16 +6,28 @@ package com.lehtoneo.ot2048.ui;
  * and open the template in the editor.
  */
 
+import com.lehtoneo.ot2048.dao.UserDao;
 import com.lehtoneo.ot2048.domain.GameGrid;
+import com.lehtoneo.ot2048.domain.Ot2048Service;
+import com.lehtoneo.ot2048.domain.User;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -60,11 +72,22 @@ public class GameController implements Initializable {
     private Label threeThree;
     @FXML
     private GridPane grid;
+    @FXML
+    private Label loggedInLabel;
+    @FXML
+    private Button quitGame;
+    @FXML
+    private Text saveText;
     
+    @FXML
+    private Text currentHighscore;
     
-    
+    private Ot2048Service service;
+    private User loggedIn;
     private Label[][] labels;
     private GameGrid gamegrid;
+    private UserDao userdao;
+    
 
     /**
      * Initializes the controller class.
@@ -76,8 +99,9 @@ public class GameController implements Initializable {
         
         labels = new Label[4][4];
         
-         
+        service = new Ot2048Service();
         
+        userdao = new UserDao();
         
         
         labels[0][0] = zeroZero;
@@ -113,6 +137,8 @@ public class GameController implements Initializable {
                 
                 
             }
+            
+            update();
         
         
       
@@ -168,12 +194,59 @@ public class GameController implements Initializable {
             }
         }
         
+        saveText.setText("");
+        
+        
+        
         
             
         
 
         
     }
+ 
+ 
+@FXML
+private void quitGameButtonAction(ActionEvent event) throws IOException, Exception { 
+        
+    Stage gameStage = (Stage) quitGame.getScene().getWindow();
+    setLoggedIn(null);    
+    gameStage.close();
+
+    SetUpLogInUI ui = new SetUpLogInUI();
+    
+    ui.start(new Stage());
+                    
+        
+}
+
+@FXML
+private void saveScoreAction(ActionEvent event) throws IOException, Exception { 
+        
+    boolean didItUpdate = userdao.updateHighscore(service.getLoggedIn(), gamegrid.getCurrentPoints());
+    
+    if (didItUpdate) {
+        saveText.setText("HighScore saved succesfully");
+        currentHighscore.setText(userdao.getHighscore(service.getLoggedIn()).toString());
+    } else {
+        saveText.setText("No point in saving, you already have a better highscore");
+    }
+    
+    
+        
+}
+ 
+ 
+ public void setLoggedIn(User user)  {
+    this.loggedIn = user;
+ }
+ 
+ 
+ public void setOt2048Service(Ot2048Service service) throws SQLException {
+    this.service.setLoggedIn(service.getLoggedIn());
+    loggedInLabel.setText("Logged in as: " + this.service.getLoggedIn().getUsername());
+    currentHighscore.setText(userdao.getHighscore(this.service.getLoggedIn()).toString());
+ }
  
  
 

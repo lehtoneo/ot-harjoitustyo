@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author ossij
  */
-public class UserDao implements Dao<User, String> { 
+public class UserDao implements Dao { 
 
     @Override
     public void create(User user) throws SQLException {
@@ -27,14 +27,15 @@ public class UserDao implements Dao<User, String> {
         Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
         
         PreparedStatement stmt = connection.prepareStatement("INSERT INTO User"
-            + " (username, password)"
-            + " VALUES (?, ?)");
+            + " (username, password, highscore)"
+            + " VALUES (?, ?, ?)");
         stmt.setString(1, user.getUsername());
         stmt.setString(2, user.getPassword());
+        stmt.setInt(3, 0);
         
         stmt.executeUpdate();
-    //    stmt.close();
-    //   connection.close();
+        
+        
         
     }
 
@@ -87,6 +88,66 @@ public class UserDao implements Dao<User, String> {
     //    connection.close();
         
         return new User(rs.getString("Username"), rs.getString("Password"));
+    }
+    
+    
+    
+    public boolean updateHighscore(User user, Integer currentScore) throws SQLException {
+        
+        
+        
+        Integer currentHighscore = getHighscore(user);
+        
+        if (currentHighscore >= currentScore) {
+            return false;
+        }
+        
+        Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
+        PreparedStatement stmt = connection.prepareStatement("UPDATE User "
+                + "SET Highscore = ? "
+                + "WHERE Username = ?");
+        stmt.setInt(1, currentScore);
+        stmt.setString(2, user.getUsername());
+        
+        stmt.executeUpdate();
+        
+        return true;
+        
+    }
+    
+    public Integer getHighscore(User user) throws SQLException {
+        Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
+        
+        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM user WHERE username = ?");
+        stmt.setString(1, user.getUsername());
+        ResultSet rs = stmt.executeQuery();
+        
+        rs.next();
+        
+        Integer currentHighscore = rs.getInt("highscore");
+        
+        return currentHighscore;
+    }
+    
+    
+    
+    public User makeANewQuestUser() throws SQLException {
+        
+        Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
+        
+        PreparedStatement stmt = connection.prepareStatement("Select max(id) as id from user");
+        
+        
+        ResultSet rs = stmt.executeQuery();
+        
+        if (!rs.next()) {
+            return new User("quest00", "");
+        };
+        
+        Integer questnumber = rs.getInt("id");
+        questnumber++;
+        
+        return new User("Quest8348" + questnumber, "");
     }
     
 

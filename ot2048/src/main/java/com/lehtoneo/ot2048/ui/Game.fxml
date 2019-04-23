@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" onKeyPressed="#keyPressed" prefHeight="487.0" prefWidth="683.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lehtoneo.ot2048.ui.GameController">
     
@@ -95,6 +97,23 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="272.0" layoutY="66.0" prefHeight="17.0" prefWidth="267.0" text="Press arrow keys to play" textAlignment="CENTER" />
+      <Label layoutX="251.0" layoutY="72.0" prefHeight="17.0" prefWidth="267.0" text="Press arrow keys to play" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB" size="19.0" />
+         </font></Label>
+      <Label fx:id="loggedInLabel" layoutX="106.0" layoutY="27.0" prefHeight="17.0" prefWidth="226.0" text="L" textFill="#7d73f5" />
+      <Button fx:id="quitGame" layoutX="80.0" layoutY="71.0" mnemonicParsing="false" onAction="#quitGameButtonAction" text="Quit game" />
+      <Button fx:id="saveScore" layoutX="551.0" layoutY="70.0" mnemonicParsing="false" onAction="#saveScoreAction" text="Save score" />
+      <Text layoutX="66.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your current saved highscore:" wrappingWidth="275.5872039794922">
+         <font>
+            <Font name="Berlin Sans FB" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="currentHighscore" layoutX="95.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="score">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text fx:id="saveText" fill="#cf0707" layoutX="372.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="292.119140625" />
    </children>
 </AnchorPane>

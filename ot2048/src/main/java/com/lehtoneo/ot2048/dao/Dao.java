@@ -5,11 +5,12 @@
  */
 package com.lehtoneo.ot2048.dao;
 
+import com.lehtoneo.ot2048.domain.User;
 import java.sql.*;
 import java.util.*;
 
-public interface Dao<T, K> {
-    void create(T object) throws SQLException;
-    T read(K key) throws SQLException;
-    List<T> list() throws SQLException;
+public interface Dao {
+    void create(User user) throws SQLException;
+    User read(String username) throws SQLException;
+    List<User> list() throws SQLException;
 }

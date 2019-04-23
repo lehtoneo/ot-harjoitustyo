@@ -19,6 +19,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -29,11 +31,11 @@ public class CreateUserController implements Initializable {
 
     
     @FXML
-    Label somethingIsWrongUsername;
+    Text somethingIsWrongUsername;
     @FXML
-    Label somethingIsWrongPassword;
+    Text somethingIsWrongPassword;
     @FXML
-    Label someThingIsWrongPasswordTwo;
+    Text someThingIsWrongPasswordTwo;
     @FXML
     TextField createUsername;
     @FXML
@@ -43,17 +45,18 @@ public class CreateUserController implements Initializable {
     @FXML
     Button submit;
     @FXML
-    Label everythingOk;
+    Text everythingOk;
     
+    Ot2048Service service;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        service = new Ot2048Service();
     }
 
     @FXML
-    private void submitButtonAction(ActionEvent event) throws IOException, SQLException {
-        Ot2048Service service = new Ot2048Service();
+    private void submitButtonAction(ActionEvent event) throws IOException, SQLException, InterruptedException {
+        
         
         if (!service.doPasswordFieldsMatch(createUserPassword.getText(), createUserPasswordAgain.getText())) {
             somethingIsWrongPassword.setText("Passwordfields don't match.");
@@ -73,7 +76,9 @@ public class CreateUserController implements Initializable {
         if (newUser.isUserLegal()) {
             service.createUser(newUser);
             everythingOk.setText("User created successfully!");
+            
             clearPasswordFields();
+            closeCreateUserScreen();
         } else {
             somethingIsWrongUsername.setText("Make sure your username is atleast 4 characters long");
             somethingIsWrongPassword.setText("Password has to be atleast 5 characters long");
@@ -93,5 +98,19 @@ public class CreateUserController implements Initializable {
     }
     
     
+    public void closeCreateUserScreen() throws InterruptedException {
+        Stage createUserStage = (Stage) submit.getScene().getWindow();
+        sleep(1000);
+        createUserStage.close();
+        
+        
+        
+        
+    }
     
-}
+    public void sleep(int time) throws InterruptedException {
+        Thread.sleep(time);
+    } 
+        
+    }
+    

@@ -7,12 +7,15 @@ package com.lehtoneo.ot2048.domain;
 
 import com.lehtoneo.ot2048.dao.UserDao;
 import java.sql.SQLException;
+import javafx.scene.control.PasswordField;
 
 /**
  *
  * @author ossij
  */
 public class Ot2048Service {
+    
+    private User loggedIn;
     
     
     public boolean doesUsernameExist(String username) throws SQLException {
@@ -26,6 +29,14 @@ public class Ot2048Service {
         return true;
         
        
+    }
+    
+    public void setLoggedIn(User user) {
+        this.loggedIn = user;
+    }
+    
+    public User getLoggedIn() {
+        return this.loggedIn;
     }
        
        

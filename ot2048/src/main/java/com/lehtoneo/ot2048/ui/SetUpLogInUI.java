@@ -1,5 +1,6 @@
 package com.lehtoneo.ot2048.ui;
 
+import com.lehtoneo.ot2048.domain.GameGrid;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -25,25 +26,14 @@ public class SetUpLogInUI extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-//     Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
-//        
-//        PreparedStatement stmt = connection.prepareStatement("CREATE TABLE User (\n" +
-//"    id int NOT NULL AUTO_INCREMENT,\n" +
-//"    username varchar,\n" +
-//"    password varchar,\n" +
-//"    PRIMARY KEY (id)\n" +
-//");");
-//        
-//        stmt.executeUpdate();
-//        stmt.close();
-//        connection.close();
+       
         initDatabase();
 
         Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
         
         Scene scene = new Scene(root);
  
-       //scene.getStylesheets().add("/styles/Styles.css");
+       
         
         stage.setTitle("Log IN");
         stage.setScene(scene);
@@ -66,7 +56,7 @@ public class SetUpLogInUI extends Application {
     private static void initDatabase() {
         
            try (Connection conn = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "")) {
-            conn.prepareStatement("CREATE TABLE User(id INTEGER NOT NULL AUTO_INCREMENT, username VARCHAR, password VARCHAR);").executeUpdate();
+            conn.prepareStatement("CREATE TABLE User(id INTEGER NOT NULL AUTO_INCREMENT, username VARCHAR, password VARCHAR, highscore INTEGER);").executeUpdate();
             
             
       

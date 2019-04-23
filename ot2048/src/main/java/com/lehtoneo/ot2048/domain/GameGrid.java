@@ -29,6 +29,8 @@ public class GameGrid {
         
     }
     
+
+    
     
     public final void setUpGrid() {
        
@@ -120,7 +122,7 @@ public class GameGrid {
 
 
 
-    public void combineNumbersRight() {
+    public void combineRight() {
         for (int x = 3; x > 0; x--) {
             
             for (int y = 3; y >= 0; y--) {
@@ -152,7 +154,7 @@ public class GameGrid {
         helpGrid.setGrid(this.getGrid());
         
         moveEveryNumberRight();
-        combineNumbersRight();
+        combineRight();
         moveEveryNumberRight();
         
         
@@ -188,7 +190,7 @@ public class GameGrid {
    
    
    
-    public void combineNumbersLeft() {
+    public void combineLeft() {
         for (int x = 0; x < 3; x++) {
             
             for (int y = 3; y >= 0; y--) {
@@ -214,7 +216,7 @@ public class GameGrid {
         helpGrid.setGrid(this.getGrid());
         
         moveEveryNumberLeft();
-        combineNumbersLeft();
+        combineLeft();
         moveEveryNumberLeft();
         
         
@@ -224,7 +226,7 @@ public class GameGrid {
         
     }
   
-    private void moveEveryNumberUp() {
+    public void moveEveryNumberUp() {
         
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid.length - 1; y++) {
@@ -285,7 +287,7 @@ public class GameGrid {
         
     }
      
-    private void moveEveryNumberDown() {
+    public void moveEveryNumberDown() {
         
         for (int y = 3; y >= 1; y--) {
             for (int x = 0; x < grid.length; x++) {
@@ -307,7 +309,7 @@ public class GameGrid {
         }
     }
               
-    private void combineDown() {
+    public void combineDown() {
           
         for (int y = 3; y >= 1; y--) {
             for (int x = 0; x < grid.length; x++) {
@@ -349,6 +351,28 @@ public class GameGrid {
         }
         
     }
-  
+    
+    
+    public void newGame() {
+        setUpGrid();
+    }
+    
+    
+    public Integer getCurrentPoints() {
+        int biggest = 0;
+        for (int x = 0; x < 4; x++) {
+            
+            for (int y = 0; y < 4; y++) {
+                if( grid[y][x] > biggest) {
+                    biggest = grid[y][x];
+                };
+            }
+            
+        }
+        return biggest;
+        
+    }
+    
+    
     
 }

@@ -25,6 +25,7 @@ public class GameGridTest {
     GameGrid grid4;
     GameGrid grid5;
     GameGrid testGrid;
+    GameGrid fullTestGrid;
     
     
    
@@ -38,20 +39,36 @@ public class GameGridTest {
         
         
         int[][] testArray = new int[4][4];
+        int[][] fullTestArray = new int[4][4];
+        
         
         for (int x = 0; x < 4; x++) {
             
             for (int y = 0; y < 4; y++) {
                 testArray[y][x] = 0;
+                
             }
             
         }
+        int numbr = 1;
+        for (int x = 0; x < 4; x++) {
+            
+            for (int y = 0; y < 4; y++) {
+                fullTestArray[y][x] = numbr;
+                numbr++;
+            }
+            
+        }
+        
+        
         testArray[3][1] = 1;
         testArray[3][2] = 1;
         testArray[2][1] = 1;
         testArray[2][2] = 2;
+        testArray[0][3] = 4;
         
         testGrid = new GameGrid(testArray);
+        fullTestGrid = new GameGrid(fullTestArray);
     }
     
     @After
@@ -81,29 +98,39 @@ public class GameGridTest {
         
         int shouldBeOne = testGrid.getGrid()[3][0];
         
-        assertEquals(shouldBeOne, 1);
+        assertEquals(1, shouldBeOne);
     }
     
    
     
     @Test
-    public void combineNumbersLeftCombinesNumbersIfTheyAreEqual() {
+    public void combineLeftCombinesNumbersIfTheyAreEqual() {
         
-        testGrid.combineNumbersLeft();
+        testGrid.combineLeft();
         
         int shouldBeTwo = testGrid.getGrid()[3][0];
         
-        assertEquals(shouldBeTwo, 2);
+        assertEquals(2, shouldBeTwo);
     }
     
     @Test 
-    public void combineNumbersLeftDoesntCombineNumbersIfTheyAreNotEqual() {
+    public void combineLeftDoesntCombineNumbersIfTheyAreNotEqual() {
         
-        testGrid.combineNumbersLeft();
+        testGrid.combineLeft();
         
         int shouldBeOne = testGrid.getGrid()[2][0];
         
-        assertEquals(shouldBeOne,1);
+        assertEquals(1, shouldBeOne);
+    }
+    
+    @Test
+    public void moveLeftMethodDoesntChangeGridIfMoveDoesntChangeGrid() {
+        
+        GameGrid shouldBeSame = new GameGrid(fullTestGrid.getGrid());
+        
+        fullTestGrid.moveLeft();
+        
+        assertTrue(shouldBeSame.equals(fullTestGrid));
     }
     
     @Test
@@ -113,28 +140,61 @@ public class GameGridTest {
         
         int shouldBeTwo = testGrid.getGrid()[2][3];
         
-        assertEquals(shouldBeTwo, 2);
+        assertEquals(2, shouldBeTwo);
         
     }
     
     @Test
-    public void combineNumbersRightCombinesNumbersIfTheyAreEqual() {
+    public void combineRightCombinesNumbersIfTheyAreEqual() {
         
-        testGrid.combineNumbersRight();
+        testGrid.combineRight();
         
         int shouldBeTwo = testGrid.getGrid()[3][3];
         
-        assertEquals(shouldBeTwo, 2);
+        assertEquals(2, shouldBeTwo);
     }
     
     @Test 
-    public void combineNumbersRightDoesntCombineNumbersIfTheyAreNotEqual() {
+    public void combineRightDoesntCombineNumbersIfTheyAreNotEqual() {
         
-        testGrid.combineNumbersRight();
+        testGrid.combineRight();
         
         int shouldBeTwo = testGrid.getGrid()[2][3];
         
-        assertEquals(shouldBeTwo,2);
+        assertEquals(2, shouldBeTwo);
     }
+    
+    @Test
+    public void moveNumbersDownMovesEveryNumberDownOnce() {
+        
+        testGrid.moveEveryNumberDown();
+        
+        int shouldBeFour = testGrid.getGrid()[1][3];
+        
+        assertEquals(4, shouldBeFour);
+        
+    }
+    
+    @Test
+    public void combineDownCombinesNumbersIfTheyAreEqual() {
+        
+        testGrid.combineDown();
+        
+        int shouldBeTwo = testGrid.getGrid()[3][1];
+        
+        assertEquals(2, shouldBeTwo);
+    }
+    
+    @Test
+    public void combineDownDoesntCombineNumbersIfTheyAreNotEqual() {
+        
+        testGrid.combineDown();
+        int shouldBeOne = testGrid.getGrid()[3][2];
+        
+        assertEquals(1, shouldBeOne);
+    }
+    
+  
+    
     
 }

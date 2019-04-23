@@ -50,10 +50,10 @@
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.0</version>
             <configuration>
-        <excludes>
-            <exclude>com/lehtoneo/ot2048/ui/*</exclude>
-        </excludes>
-    </configuration>  
+                <excludes>
+                    <exclude>com/lehtoneo/ot2048/ui/*</exclude>
+                </excludes>
+                </configuration>
             <executions>
                 <execution>
                     <id>default-prepare-agent</id>
@@ -62,7 +62,7 @@
                     </goals>
                 </execution>
             </executions>
-        </plugin>  
+        </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
