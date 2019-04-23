@@ -50,3 +50,9 @@ Checkstylen havaitsemien virheiden määrä saadaan komennolla
 
 Mikäli haluaa tutkia projektin mahdollisten checkstyle virheiden sijaintia ja/tai tyyppiä, voi avata  selaimella tiedoston _target/site/checkstyle.html_
 
+### Jarin generointi
+
+```
+mvn package
+```
+Komento luo hakemistoon target jar-tiedoston ot2048-1.0-SNAPSHOT.jar
