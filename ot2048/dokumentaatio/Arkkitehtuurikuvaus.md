@@ -1,5 +1,8 @@
 # Arkkitehtuurikuvaus
-## Pakkauskaavio
+## Sovelluslogiikka
+Pelin loogisen datamallin muodostavat luokat gamegrid, ot2048service sekä user.
+
+Pakkauskaavio, josta puuttuu main luokka setUpLogInUI, jolla ei ole varsinaisesti mitään muuta tehtävää, kuin avata log in näkymä, sekä luoda tietokanta juurikansioon, mikäli sitä ei ole olemassa.
 <img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/uusiPakkausKaavioKuva.JPG">
 
 ## Sekvenssikaavioita
