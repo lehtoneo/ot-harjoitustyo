@@ -97,7 +97,7 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="251.0" layoutY="72.0" prefHeight="17.0" prefWidth="267.0" text="Press arrow keys to play" textAlignment="CENTER">
+      <Label layoutX="251.0" layoutY="72.0" prefHeight="17.0" prefWidth="267.0" text="Press a, s, d, and w to play" textAlignment="CENTER">
          <font>
             <Font name="Berlin Sans FB" size="19.0" />
          </font></Label>

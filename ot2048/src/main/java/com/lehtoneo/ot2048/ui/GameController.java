@@ -140,8 +140,7 @@ public class GameController implements Initializable {
             
             update();
         
-        
-      
+        grid.requestFocus();
                 
             }
         
@@ -156,22 +155,22 @@ public class GameController implements Initializable {
         void keyPressed(KeyEvent event) {
             switch (event.getCode()) {
             
-                case LEFT:
+                case A:
                 gamegrid.moveLeft();
                 update();
                 break;
             
-            case UP:
+            case W:
                 gamegrid.moveUp();
                 update();
                 break;
             
-            case DOWN:
+            case S:
                 gamegrid.moveDown();
                 update();
                 break;
             
-            case RIGHT:
+            case D:
                 gamegrid.moveRight();
                 update();
                 break;

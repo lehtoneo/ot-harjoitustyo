@@ -140,7 +140,7 @@ public class LogInController implements Initializable {
        
         closeLogInScreen();
         
-       
+        
    }
    
     /**
