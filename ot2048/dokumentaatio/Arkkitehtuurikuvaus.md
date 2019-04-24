@@ -1,13 +1,11 @@
 # Arkkitehtuurikuvaus
 ## Sovelluslogiikka
-Sovelluksen loogisen datamallin muodostavat luokat gamegrid ja user.
+Sovelluksen loogisen datamallin muodostavat luokat gamegrid ja user. GameGrid sisältää kaikki peliin liittyvät toiminnot. User luokka kuvaa käyttäjää.
 
-GameGrid sisältää kaikki peliin liittyvät toiminnot.
-User luokka kuvaa käyttäjää.
 
 Käyttöliittymän toimminnallisesta kokonaisuudesta vastaavat luokat ot2048service, sekä UserDao.
-
 UserDao tarjoaa mm. seuraavat metodit suoraa käyttöliittymälle:
+
 void create(User user)
 Integer getHighscore(User user)
 Boolean updateHighscore(User user, Int score)
@@ -15,11 +13,16 @@ User read(String username)
 
 Näiden avulla käyttöliitymää voidaan muokata ajantasalle.
 
+
+
 Ot2048Service tarjoaa metodit kuten:
 setLoggedIn(User user)
 User getLoggenIn()
 
 Näiden avulla voidaan hallita sitä, mikä käyttäjä on kirjautunut, sekä kirjautuneen käyttäjän tietoja.
+
+
+
 
 
 
