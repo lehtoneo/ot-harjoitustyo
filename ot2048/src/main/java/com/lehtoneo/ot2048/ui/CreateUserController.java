@@ -5,6 +5,7 @@
  */
 package com.lehtoneo.ot2048.ui;
 
+import com.lehtoneo.ot2048.dao.Dao;
 import com.lehtoneo.ot2048.dao.UserDao;
 import com.lehtoneo.ot2048.domain.User;
 import com.lehtoneo.ot2048.domain.Ot2048Service;
