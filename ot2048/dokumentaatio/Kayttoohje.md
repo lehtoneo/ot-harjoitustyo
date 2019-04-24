@@ -3,7 +3,7 @@
 
 ### Kirjautuminen
 
-<img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/logInKuva.JPG" width = "175">
+<img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/logInKuva.JPG" width = "200">
 
 ### Uuden käyttäjän luominen
 
