@@ -9,8 +9,7 @@ package com.lehtoneo.ot2048.domain;
 import java.util.Random;
 
 /**
- *
- * @author ossij
+ * Luokka on 2048-pelin pohja, joka huolehtii pelin sovelluslogiikasta
  */
 public class GameGrid {
     
@@ -31,7 +30,11 @@ public class GameGrid {
     
 
     
-    
+    /**
+ * Alustaa uuden pelin numberOneToRandomPlace metodin avulla siten, 
+ * että pelitaulukon yhden satunnaisen alkion arvo on yksi, ja muiden nolla.
+ * @see #numberOneToRandomPlace() 
+ */
     public final void setUpGrid() {
        
         for (int x = 0; x < 4; x++) {
@@ -47,6 +50,11 @@ public class GameGrid {
     }
     
     
+    /**
+ * Metodi tutkii, ovatko kaksi gamegrid-oliota samanlaisia.
+ * @param gamegrid   toinen gamegrid-olio
+ * @return  true   jos gamegrid-olioiden jokainen alkio vastaa toisiaan, muuten false
+ */
     public boolean equals(GameGrid gamegrid) {
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < 4; y++) {
@@ -75,7 +83,9 @@ public class GameGrid {
     }
     
     
-    
+    /**
+ * Metodi laittaa peliruudukon yhden satunnaisen nolla-alkion paikalle numerom yksi.
+ */
     public void numberOneToRandomPlace() {
         Random random = new Random();
         
@@ -99,7 +109,9 @@ public class GameGrid {
     
     
     
-    
+     /**
+ * Liikuttaa jokaista peliruudukon numeroa oikealle yhden sarakkeen verran, jos oikeanpuolinen alkio on 0
+ */
     public void moveEveryNumberRight() {
         
         for (int x = 3; x > 0; x--) {
@@ -121,7 +133,9 @@ public class GameGrid {
     
 
 
-
+/**
+ * Yhdistää ruudukon kaikki numerot oikealle, jotka voidaan yhdistää
+ */
     public void combineRight() {
         for (int x = 3; x > 0; x--) {
             
@@ -148,6 +162,12 @@ public class GameGrid {
         }
     }
     
+    
+ /**
+ * Metodi joka tekee siirron oikealle
+ * @see #moveEveryNumberRight() 
+ * @see #combineRight() 
+ */
     public void moveRight() {
         
         GameGrid helpGrid = new GameGrid();
@@ -164,7 +184,9 @@ public class GameGrid {
         
     }
  
-
+/**
+ * Liikuttaa jokaista peliruudukon numeroa vasemmalle yhden sarakkeen verran, jos vasemmanpuolinen alkio on 0
+ */
     public void moveEveryNumberLeft() {
         
         for (int x = 0; x < 3; x++) {
@@ -189,7 +211,9 @@ public class GameGrid {
     }
    
    
-   
+/**
+ * Yhdistää ruudukon kaikki numerot vasemmalle, jotka voidaan yhdistää
+ */
     public void combineLeft() {
         for (int x = 0; x < 3; x++) {
             
@@ -209,7 +233,11 @@ public class GameGrid {
         }
     }
         
-        
+ /**
+ * Metodi joka tekee siirron oikealle
+ * @see #moveEveryNumberLeft() 
+ * @see #combineLeft() 
+ */        
     public void moveLeft() {
         
         GameGrid helpGrid = new GameGrid();
@@ -225,7 +253,9 @@ public class GameGrid {
         }
         
     }
-  
+ /**
+ * Liikuttaa jokaista peliruudukon numeroa ylös yhden rivin verran, mikäli yläpuolinen alkio on 0
+ */ 
     public void moveEveryNumberUp() {
         
         for (int x = 0; x < grid.length; x++) {
@@ -242,7 +272,10 @@ public class GameGrid {
 
         }     
     }
- 
+    
+ /**
+ * Yhdistää ruudukon kaikki numerot ylös, jotka voidaan yhdistää
+ */
     public void combineUp() {
           
         for (int x = 0; x < grid.length; x++) {
@@ -270,7 +303,11 @@ public class GameGrid {
         }
     }
        
-       
+   /**
+ * Metodi joka tekee siirron ylös
+ * @see #moveEveryNumberUp() 
+ * @see #combineUp() 
+ */             
     public void moveUp() {
         
         GameGrid helpGrid = new GameGrid();
@@ -286,7 +323,10 @@ public class GameGrid {
         }
         
     }
-     
+
+     /**
+ * Liikuttaa jokaista peliruudukon numeroa alas yhden rivin verran, mikäli alapuolinen alkio on 0
+ */ 
     public void moveEveryNumberDown() {
         
         for (int y = 3; y >= 1; y--) {
@@ -308,7 +348,9 @@ public class GameGrid {
 
         }
     }
-              
+     /**
+ * Yhdistää ruudukon kaikki numerot alas, jotka voidaan yhdistää
+ */          
     public void combineDown() {
           
         for (int y = 3; y >= 1; y--) {
@@ -336,6 +378,11 @@ public class GameGrid {
             
     }
 
+     /**
+ * Metodi joka tekee siirron alas
+ * @see #moveEveryNumberDown() 
+ * @see #combineDown() 
+ */             
     public void moveDown() {
                   
         GameGrid helpGrid = new GameGrid();
@@ -352,20 +399,26 @@ public class GameGrid {
         
     }
     
-    
+    /**
+ * Alustaa pelin uusiksi siten, että ruudukossa on yksi ykkönen, ja loput nollia
+ * @see #setUpGrid
+ */      
     public void newGame() {
         setUpGrid();
     }
     
-    
+    /**
+ * Etsii suurimman alkion ruudukosta
+ * @return palauttaa ruudukon suurimman alkion arvon
+ */      
     public Integer getCurrentPoints() {
         int biggest = 0;
         for (int x = 0; x < 4; x++) {
             
             for (int y = 0; y < 4; y++) {
-                if( grid[y][x] > biggest) {
+                if (grid[y][x] > biggest) {
                     biggest = grid[y][x];
-                };
+                }
             }
             
         }

@@ -30,7 +30,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Controller luokka, joka huolehtii peli-ikkunasta
  *
  * @author ossij
  */
@@ -90,7 +90,7 @@ public class GameController implements Initializable {
     
 
     /**
-     * Initializes the controller class.
+     * Alustaa controller luokan
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -148,7 +148,10 @@ public class GameController implements Initializable {
         
     }
     
-    
+    /**
+     * Nuolinäppäimien painamisen kontrollista vastaava metodi
+     * @param event -
+     */
         @FXML  
         void keyPressed(KeyEvent event) {
             switch (event.getCode()) {
@@ -179,7 +182,9 @@ public class GameController implements Initializable {
             }
         }
 
-
+/**
+ * Päivittää pelin näkymän samaksi, kuin luokan gamegrid olio
+ */
  public void update(){
         
         for(int x = 0; x < 4; x++){
@@ -205,7 +210,12 @@ public class GameController implements Initializable {
         
     }
  
- 
+/**
+ * quitGame napin painalluksesta vastaava metodi, nappia painamalla peli sulkeutuu ja avataan log in screen
+ * @param event -
+ * @throws IOException -
+ * @throws Exception -
+ */
 @FXML
 private void quitGameButtonAction(ActionEvent event) throws IOException, Exception { 
         
@@ -220,6 +230,13 @@ private void quitGameButtonAction(ActionEvent event) throws IOException, Excepti
         
 }
 
+/**
+ * Save Score napin painalluksesta huolehtiva metodi.
+ *  Mikäli pelaajalla on uusi highscore, nappia painamalla se tallennetaan tietokantaan ja näytetään ruudulla 
+ * @param event - 
+ * @throws IOException -
+ * @throws Exception -
+ */
 @FXML
 private void saveScoreAction(ActionEvent event) throws IOException, Exception { 
         
@@ -241,7 +258,11 @@ private void saveScoreAction(ActionEvent event) throws IOException, Exception {
     this.loggedIn = user;
  }
  
- 
+/**
+ * Alustaa luokan ot2048service olion, sekä päivittää tekstin siitä, kuka on kirjautunut.
+ * @param service ot2048service, jonka parametrit kopioidaan peli-ikkunan ot2048servicelle
+ * @throws SQLException -
+ */ 
  public void setOt2048Service(Ot2048Service service) throws SQLException {
     this.service.setLoggedIn(service.getLoggedIn());
     loggedInLabel.setText("Logged in as: " + this.service.getLoggedIn().getUsername());

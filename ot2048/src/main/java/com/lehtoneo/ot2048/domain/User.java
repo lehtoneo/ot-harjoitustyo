@@ -6,8 +6,7 @@
 package com.lehtoneo.ot2048.domain;
 
 /**
- *
- * @author ossij
+ *Sovelluksen käyttäjää edustava luokka
  */
 public class User {
     
@@ -34,7 +33,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+/**
+ *Tutkii onko sekä käyttäjä nimi, että salasana sallittu
+ *@return true mikäli molemmat ovat sallittuja, muuten false
+ *@see #isUsernameLegal() 
+ *@see #isPasswordLegal() 
+ */       
     public boolean isUserLegal() {
         
         if (isUsernameLegal() && isPasswordLegal()) {
@@ -42,7 +46,10 @@ public class User {
         }
         return false;
     }
-    
+/**
+ *Tutkii onko käyttäjänimi sallittu
+ *@return true mikäli käyttäjänimi on sallittu, muuten false
+ */    
     public boolean isUsernameLegal() {
         
         if (username == null) {
@@ -57,7 +64,10 @@ public class User {
         return true;
         
     }
-    
+/**
+ *Tutkii onko salasana sallittu
+ *@return true mikäli salasana on sallittu, muuten false
+ */      
     public boolean isPasswordLegal() {
         
         if (password == null) {
@@ -74,7 +84,10 @@ public class User {
         return true;
     }
     
-    
+/**
+ *Tutkii onko parametriksi annettu olio sama kuin tämä user-olio
+ *@return true mikäli on sama, muuten false
+ */          
     @Override
     public boolean equals(Object obj) {
             

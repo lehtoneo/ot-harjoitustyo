@@ -23,9 +23,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
- * @author ossij
+ * Controller luokka, joka huolehtii ikkunasta, jossa luodaan uusikäyttäjä
  */
 public class CreateUserController implements Initializable {
 
@@ -48,56 +46,62 @@ public class CreateUserController implements Initializable {
     Text everythingOk;
     
     Ot2048Service service;
+    UserDao dao;
     
+    /**
+     * alustaa service ja dao oliot
+    */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         service = new Ot2048Service();
+        dao = new UserDao();
     }
-
+    
+    /**
+     * submit napit painamisen toimisesta huolehtiva metodi
+     * @param event #
+     * @throws IOException -
+     * @throws SQLException -
+     * @throws InterruptedException -
+     */
     @FXML
     private void submitButtonAction(ActionEvent event) throws IOException, SQLException, InterruptedException {
         
         
         if (!service.doPasswordFieldsMatch(createUserPassword.getText(), createUserPasswordAgain.getText())) {
-            somethingIsWrongPassword.setText("Passwordfields don't match.");
-            everythingOk.setText("");
+            passwordFieldsDontMatch();
             return;
         }
         
         if (service.doesUsernameExist(createUsername.getText())) {
-            somethingIsWrongUsername.setText("Username is already in use");
-            everythingOk.setText("");
-            clearPasswordFields();
+            usernameExists();
             return;
         }
         
         User newUser = new User(createUsername.getText(), createUserPassword.getText());
          
         if (newUser.isUserLegal()) {
-            service.createUser(newUser);
-            everythingOk.setText("User created successfully!");
-            
-            clearPasswordFields();
-            closeCreateUserScreen();
+            letsMakeANewUser(newUser);
         } else {
-            somethingIsWrongUsername.setText("Make sure your username is atleast 4 characters long");
-            somethingIsWrongPassword.setText("Password has to be atleast 5 characters long");
-            someThingIsWrongPasswordTwo.setText("Password can't contain spaces");
-            everythingOk.setText("");
-            clearPasswordFields();
+            cantMakeThisUser();
         }
         
 
         
     }
     
-    
+    /**
+     * Tyhjentää salasanakentät
+     */
     public void clearPasswordFields() {
         createUserPassword.setText("");
         createUserPasswordAgain.setText("");
     }
     
-    
+    /**
+     * Sulkee käyttäjänluomis-ikkunan
+     * @throws InterruptedException -
+     */
     public void closeCreateUserScreen() throws InterruptedException {
         Stage createUserStage = (Stage) submit.getScene().getWindow();
         sleep(1000);
@@ -107,10 +111,61 @@ public class CreateUserController implements Initializable {
         
         
     }
+    /**
+     * Asettaa tekstin, että salasanakentät eivät täsmää, sekä tyhjentää kentät
+     * @see #clearPasswordFields() 
+     */
+    public void passwordFieldsDontMatch() {
+        somethingIsWrongPassword.setText("Passwordfields don't match.");
+        everythingOk.setText("");
+        clearPasswordFields();
+        
+    }
     
+    /**
+     * Asettaa tekstin, että käyttäjänimi on käytössä, sekä tyhjentää salasanakentät
+     * @see #clearPasswordFields() 
+     */
+    public void usernameExists() {
+        somethingIsWrongUsername.setText("Username is already in use");
+        everythingOk.setText("");
+        clearPasswordFields();
+    }
+    
+    /**
+     * Luo daon avulla uuden käyttäjän, sekä asettaa tekstin, että käyttäjä on luotu onnistuneesti
+     * @param user käyttäjä, joka luodaan
+     * @throws SQLException -
+     * @throws InterruptedException  -
+     */
+    public void letsMakeANewUser(User user) throws SQLException, InterruptedException {
+        dao.create(user);
+        everythingOk.setText("User created successfully!");
+            
+        clearPasswordFields();
+        closeCreateUserScreen();
+    }
+    
+    /**
+     * Asettaa tekstejä, jossa kerrotaan, mikä on mahdollisesti mennyt pieleen käyttäjää luodessa
+     */
+    public void cantMakeThisUser() {
+        somethingIsWrongUsername.setText("Make sure your username is atleast 4 characters long");
+        somethingIsWrongPassword.setText("Password has to be atleast 5 characters long");
+        someThingIsWrongPasswordTwo.setText("Password can't contain spaces");
+        everythingOk.setText("");
+        clearPasswordFields();
+        
+    }
+    
+    /**
+     * Metodi, joka pysäyttää sovelluksen toiminnan hetkellisesti
+     * @param time aika, jonka sovellus odottaa tekemättä mitään
+     * @throws InterruptedException #
+     */
     public void sleep(int time) throws InterruptedException {
         Thread.sleep(time);
     } 
         
-    }
+}
     

@@ -16,11 +16,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author ossij
+ *Tietojen pysyväistallennuksesta vastaava luokka
  */
 public class UserDao implements Dao { 
 
+    /**
+ *Lisää tietokantaan uuden käyttäjän antaen sille highscoreksi 0
+ * @param user tietokantaan lisättävä käyttäjä
+     * @throws java.sql.SQLException -
+ */
     @Override
     public void create(User user) throws SQLException {
         
@@ -39,6 +43,12 @@ public class UserDao implements Dao {
         
     }
 
+    
+      /**
+ *Listaa kaikki tietokannan käyttäjät
+ * @return lista käyttäjistä
+     * @throws java.sql.SQLException -
+ */
     @Override
     public List<User> list() throws SQLException {
         List<User> userList = new ArrayList<>();
@@ -59,16 +69,18 @@ public class UserDao implements Dao {
             userList.add(user);
             
         }
-        
-   //     statement.close();
-   //     connection.close();
         return userList;
         
     }
     
    
   
-
+  /**
+ *Etsii tietokannasta käyttäjän käyttäjänimen perusteella
+ * @param username käyttäjänimi
+ * @return uusi käyttäjäolio, mikäli se on olemassa, muuten null
+     * @throws java.sql.SQLException -
+ */
     @Override
     public User read(String username) throws SQLException {
         Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
@@ -83,15 +95,21 @@ public class UserDao implements Dao {
         
         
         User user = new User(rs.getString("Username"), rs.getString("Password"));
-        
-     //     stmt.close();
-    //    connection.close();
+    
         
         return new User(rs.getString("Username"), rs.getString("Password"));
     }
     
-    
-    
+   /**
+ *Päivittää parametriksi annetun käyttäjän highscoren arvon samaksi
+ * kuin toisena parametrina annettu arvo, mikäli arvo on suurempi kuin
+ * userin tämän hetkinen highscore
+ * @param user käyttäjä
+ * @param currentScore pisteet
+ * @return true mikäli highscorea päivitettiin paremmaksi, muuten false 
+     * @throws java.sql.SQLException  -
+ */   
+    @Override
     public boolean updateHighscore(User user, Integer currentScore) throws SQLException {
         
         
@@ -115,6 +133,13 @@ public class UserDao implements Dao {
         
     }
     
+   /**
+ *Etsii parametriksi annetun userin highscoren
+ * @param user käyttäjä
+ * @return käyttäjän tämänhetkinen highscore
+     * @throws java.sql.SQLException -
+ */       
+    @Override
     public Integer getHighscore(User user) throws SQLException {
         Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
         
@@ -129,8 +154,12 @@ public class UserDao implements Dao {
         return currentHighscore;
     }
     
-    
-    
+   /**
+ *Luo uuden vierailija userin
+ * @return uusi vierailija user
+     * @throws java.sql.SQLException -
+ */       
+    @Override
     public User makeANewQuestUser() throws SQLException {
         
         Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");

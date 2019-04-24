@@ -13,4 +13,7 @@ public interface Dao {
     void create(User user) throws SQLException;
     User read(String username) throws SQLException;
     List<User> list() throws SQLException;
+    Integer getHighscore(User user) throws SQLException;
+    boolean updateHighscore(User user, Integer currentScore) throws SQLException;
+    User makeANewQuestUser() throws SQLException;
 }

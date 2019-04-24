@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.lehtoneo.ot2048.domain;
 
 import com.lehtoneo.ot2048.dao.UserDao;
@@ -10,14 +6,19 @@ import java.sql.SQLException;
 import javafx.scene.control.PasswordField;
 
 /**
- *
- * @author ossij
+ * Apuluokka huolehtimaan osasta käyttöliittymään liittyvästä sovelluslogiikasta
  */
 public class Ot2048Service {
     
     private User loggedIn;
     
-    
+/**
+ * Tutkii, onko parametriksi annettu käyttäjänimi varattu
+ * @param username    käyttäjätunnus
+ * @return true  jos käyttäjä tunnus on olemassa, muuten false
+     * @throws java.sql.SQLException -
+ * @see UserDao#read(java.lang.String) 
+ */    
     public boolean doesUsernameExist(String username) throws SQLException {
         UserDao userDao = new UserDao();
         User user = userDao.read(username);
@@ -39,7 +40,13 @@ public class Ot2048Service {
         return this.loggedIn;
     }
        
-       
+ /**
+ * Tutkii, vastaako salasana käyttäjätunnustu
+ * @param user    käyttäjä
+ * @return true  jos salasana vastaa käyttäjätunnusta, muuten false
+     * @throws java.sql.SQLException -
+ * @see UserDao#read(java.lang.String) 
+ */          
     public boolean isPasswordCorrect(User user) throws SQLException {
        
         UserDao userDao = new UserDao();
@@ -54,22 +61,22 @@ public class Ot2048Service {
        
     }
     
-    
+  /**
+ * Vertailee kahta stringiä
+ * @param password    salasana
+ * @param passwordAgain    salasana uusiksi
+ * @return true  jos salasanat vastaa toisiaan, muuten false
+ */          
     public boolean doPasswordFieldsMatch(String password, String passwordAgain) {
-        if (password.equals(passwordAgain)) {
-            return true;
-        }
-        
-        
-        return false;
+        return password.equals(passwordAgain);
     }
     
     
-    public void createUser(User user) throws SQLException {
-        
-        UserDao userDao = new UserDao();
-        userDao.create(user);
-    }
+//    public void createUser(User user) throws SQLException {
+//        
+//        UserDao userDao = new UserDao();
+//        userDao.create(user);
+//    }
 
    
     

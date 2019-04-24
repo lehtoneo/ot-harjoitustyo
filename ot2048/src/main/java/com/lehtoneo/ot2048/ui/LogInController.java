@@ -27,9 +27,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-// This is the controller for log in screen
 
-
+/**
+ * Controller luokka, joka huolehtii log in ikkunasta
+*/
 public class LogInController implements Initializable {
     
     @FXML
@@ -52,18 +53,33 @@ public class LogInController implements Initializable {
     
     
     public Ot2048Service service;
+    
+    /**
+     * alustaa ot2048Service olion
+    */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
         service = new Ot2048Service();
     }
     
-    
+    /**
+     * Huolehtii create new user napin kontrollista
+     * @see #openCreateUserScreen(javafx.stage.Stage) 
+     * @param event -
+     * @throws IOException -
+     */
     @FXML
     private void createNewUserButtonAction(ActionEvent event) throws IOException {
         openCreateUserScreen(new Stage());
     }
     
+    /**
+     * Huolehtii log in napin kontrollista
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void logInButtonAction(ActionEvent event) throws IOException, SQLException {
         
@@ -87,7 +103,12 @@ public class LogInController implements Initializable {
         
     }
     
-    
+    /**
+     * Huolehtii log in as a quest napin kontrollista
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void questLogInButtonAction(ActionEvent event) throws IOException, SQLException { 
             UserDao dao = new UserDao();
@@ -100,7 +121,13 @@ public class LogInController implements Initializable {
     }
     
 
-
+    /**
+     * Avaa uuden peli-ikkunan, sekä kutsuu peli-ikkunan setOt2048Service metodia
+     * @see GameController#setOt2048Service(com.lehtoneo.ot2048.domain.Ot2048Service) 
+     * @param stage -
+     * @throws IOException -
+     * @throws SQLException -
+     */
     public void startGame(Stage stage) throws IOException, SQLException { 
        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
@@ -116,6 +143,9 @@ public class LogInController implements Initializable {
        
    }
    
+    /**
+     * sulkee log in screenin
+     */
    public void closeLogInScreen(){
        
        Stage logInScreenStage = (Stage) logIn.getScene().getWindow();
@@ -133,7 +163,11 @@ public class LogInController implements Initializable {
        
    }
     
-    
+    /**
+     * avaa create user screenin
+     * @param stage -
+     * @throws IOException -
+     */
     public void openCreateUserScreen(Stage stage) throws IOException { 
         Parent root = FXMLLoader.load(getClass().getResource("CreateUser.fxml"));
         
