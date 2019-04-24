@@ -51,7 +51,7 @@ Mikäli käyttäjä on syöttänyt "create a new user" -ikkunassa username kentt
 ## Tietojen tallennus paikalliseen tietokantaan
 com.mycompany.ot2048.dao pakkauksesta löytyvä luokka UserDao huolehtii käyttäjän tietojen tallentamisesta tietokantaan.
 
-# Tietokanta #
+### Tietokanta
 
 Sovelluksessa käyttäjien tiedot, eli käyttäjänimi, salasana sekä highscore tallennetaan yhteen tietokantaan, nimeltään kayttajatJaHighscoret. Tietokannassa on yksi taulu, joka on seuraavanlainen:
-- 
+- [User|id;username;password;highscore]
