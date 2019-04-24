@@ -16,8 +16,9 @@ UserDao tarjoaa mm. seuraavat metodit suoraa käyttöliittymälle:
 Ot2048Service tarjoaa metodit kuten:
 - setLoggedIn(User user)
 - User getLoggenIn()
+- boolean isPassWordCorrect()
 
-Ylläolevien metodien avulla voidaan hallita sitä, mikä käyttäjä on kirjautunut, sekä kirjautuneen käyttäjän tietoja.
+
 
 
 
