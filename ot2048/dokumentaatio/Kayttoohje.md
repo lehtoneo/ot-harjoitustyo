@@ -18,11 +18,11 @@ Mikäli log in ruudussa painaa create a new user nappia, pääsee tähän näkym
 <img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/createUserKuva.JPG">
 
 Tästä näkymästä voi luoda uuden käyttäjän, antamalla ensin käyttäjätunnuksen, jonka jälkeen salasanan kahteen otteeseen.
-Painamalla submit käyttäjä luodaan, mikäli vain mahdollista ja näkymä suljetaan.
+Painamalla submit, käyttäjä luodaan, mikäli vain mahdollista ja näkymä suljetaan.
 
 ### Pelaaminen ja tallentaminen
 
-Kun on joko kirjautunut omilla tunnuksillaan tai questina peliin pääsee peli näkymään, joka näyttää tältä:
+Kun on joko kirjautunut omilla tunnuksillaan tai questina peliin, pääsee peli näkymään, joka näyttää tältä:
 
 <img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/peliKuvaOt.JPG">
 
