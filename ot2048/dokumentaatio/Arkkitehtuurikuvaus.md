@@ -5,7 +5,7 @@ Sovelluksen käyttöliittymässä on kolme erilaista näkymää.
 - Pelinäkymä
 - Uuden käyttäjän luomisnäkymä
 
-näykmät ovat toteutettu fxml tiedostoina, jotka avataan FXMLLoaderin avulla niihin siirryttäessä. Jokaisen käyttöliittymäkomponentin toiminnallisuudesta vastaa komponentin oma eventHandler metodi. Näihin metodeihin on tietenkin liitetty sovelluslogiikkaa.
+näykmät ovat toteutettu fxml tiedostoina, jotka avataan FXMLLoaderin avulla niihin siirryttäessä. Jokaisen käyttöliittymäkomponentin toiminnallisuudesta vastaa komponentin oma eventHandler metodi. EventHandlerit sitten kutsuvat sopivalla tavalla sovelluslogiikan (sekä hieman käyttöliittymän) metodeja.
 
 ## Sovelluslogiikka
 Sovelluksen loogisen datamallin muodostavat luokat gamegrid ja user. GameGrid sisältää kaikki peliin liittyvät toiminnot. User luokka kuvaa käyttäjää.
