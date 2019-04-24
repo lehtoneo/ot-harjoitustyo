@@ -26,4 +26,4 @@ Kun on joko kirjautunut omilla tunnuksillaan tai questina peliin, pääsee peli 
 
 <img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/ohtePeliKuva.JPG">
 
-Peliä voi pelata nuolinäppäimillä. Mikäli haluaa tallentaa omat pisteensä, voi painaa save score nappia. Alhaalla näkyy tämän hetkinen tallennettu highscore. Quit game napilla poistutaan pelistä (tallentamatta) ja avataan taas log in screen.
+Peliä voi pelata näppäimillä a, s, w ja d. A liikuttaa ruudukkoa vasemmalle, s alas, d oikealle ja w ylös. Mikäli haluaa tallentaa omat pisteensä, voi painaa save score nappia. Alhaalla näkyy tämän hetkinen tallennettu highscore. Quit game napilla poistutaan pelistä (tallentamatta) ja avataan taas log in screen.
