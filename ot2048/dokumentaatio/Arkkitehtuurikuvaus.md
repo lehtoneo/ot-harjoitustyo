@@ -48,3 +48,10 @@ Mikäli käyttäjä on syöttänyt "create a new user" -ikkunassa username kentt
  Tässä oletetaan, että käyttäjä on syöttänyt käyttäjänimeksi "username", sekä salasanaksi "password".
  Kun käyttäjä painaa nappia submit, CreateUserController kutsuu ot2048Serviceä tarkistamaan, ovatko salasanat samoja. Koska ovat, selvitetään onko käyttäjää olemassa. Koska ei ole, luodaan metodin sisällä user olio "NewUser". Tämän jälkeen tarkistetaan User luokan metodeilla, onko käyttäjätunnus ja salasana hyväksyttäviä. Koska ovat, luodaan UserDaon avulla uusi käyttäjä sovellukseen. Tämän jälkeen ruudulle ilmestyy teksti "User created succesfully".
 
+## Tietojen tallennus paikalliseen tietokantaan
+com.mycompany.ot2048.dao pakkauksesta löytyvä luokka UserDao huolehtii käyttäjän tietojen tallentamisesta tietokantaan.
+
+# Tietokanta #
+
+Sovelluksessa käyttäjien tiedot, eli käyttäjänimi, salasana sekä highscore tallennetaan yhteen tietokantaan, nimeltään kayttajatJaHighscoret. Tietokannassa on yksi taulu, joka on seuraavanlainen:
+- 
