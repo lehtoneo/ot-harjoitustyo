@@ -1,8 +1,10 @@
 # Käyttöohje
 
 
-## Kirjautuminen
+### Kirjautuminen
 
-## Uuden käyttäjän luominen
+<img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/logInKuva.JPG, width = "175"">
 
-## Pelaaminen ja tallentaminen
+### Uuden käyttäjän luominen
+
+### Pelaaminen ja tallentaminen
