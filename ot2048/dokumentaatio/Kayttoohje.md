@@ -24,6 +24,6 @@ Painamalla submit, käyttäjä luodaan, mikäli vain mahdollista ja näkymä sul
 
 Kun on joko kirjautunut omilla tunnuksillaan tai questina peliin, pääsee peli näkymään, joka näyttää tältä:
 
-<img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/peliKuvaOt.JPG">
+<img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/ohtePeliKuva.JPG">
 
 Peliä voi pelata nuolinäppäimillä. Mikäli haluaa tallentaa omat pisteensä, voi painaa save score nappia. Alhaalla näkyy tämän hetkinen tallennettu highscore. Quit game napilla poistutaan pelistä (tallentamatta) ja avataan taas log in screen.
