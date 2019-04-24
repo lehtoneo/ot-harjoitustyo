@@ -11,15 +11,13 @@ UserDao tarjoaa mm. seuraavat metodit suoraa käyttöliittymälle:
 - Boolean updateHighscore(User user, Int score)
 - User read(String username)
 
-Näiden avulla käyttöliitymää voidaan muokata ajantasalle.
-
 
 
 Ot2048Service tarjoaa metodit kuten:
 - setLoggedIn(User user)
 - User getLoggenIn()
 
-Näiden avulla voidaan hallita sitä, mikä käyttäjä on kirjautunut, sekä kirjautuneen käyttäjän tietoja.
+Ylläolevien metodien avulla voidaan hallita sitä, mikä käyttäjä on kirjautunut, sekä kirjautuneen käyttäjän tietoja.
 
 
 
