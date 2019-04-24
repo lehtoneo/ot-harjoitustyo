@@ -50,6 +50,10 @@ Mikäli käyttäjä on syöttänyt "create a new user" -ikkunassa username kentt
 
 ## Kirjautuminen käyttäjätunnuksilla
 
+Mikäli käyttäjä on luonut itselleen tunnuksen, sekä syöttänyt tunnuksen oikein log in screenin kenttiin, etenee sovellus seuraavalla tavalla.
+
+<img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/logInSekvenssi.JPG">
+
 ## Tietojen tallennus paikalliseen tietokantaan
 com.mycompany.ot2048.dao pakkauksesta löytyvä luokka UserDao huolehtii käyttäjän tietojen tallentamisesta tietokantaan.
 
