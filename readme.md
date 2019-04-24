@@ -56,3 +56,13 @@ Mikäli haluaa tutkia projektin mahdollisten checkstyle virheiden sijaintia ja/t
 mvn package
 ```
 Komento luo hakemistoon target jar-tiedoston ot2048-1.0-SNAPSHOT.jar
+
+### JavaDoc
+
+JavaDoc generoidaan komennolla
+
+```
+mvn javadoc:javadoc
+```
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
