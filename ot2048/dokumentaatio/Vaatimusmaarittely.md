@@ -39,9 +39,7 @@ Sovelluksessa on neljä eri näkymää (Log in, create acc, game, highscoret)
  
  ## Jatkokehitysideoita
  
- - Lisätään peliin highscoret
-   
-   - Highscoreille tehdään oma ikkuna, johon päästään joko kirjautumisikkunasta tai peli-ikkunasta
+ - Parannetaan grafiikkoja
    
  - Lisätään animaatioita
    - Esim. laattojen yhdistämiselle
