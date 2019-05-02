@@ -28,3 +28,15 @@ Testaamatta jäi lähinnä vain yksinkertaisia metodeja.
 Tehty itse manuaalisesti.
 
 ### Asennus
+
+Asennus on testattu käyttöohjeen mukaisella tavalla windowsilla, seka linuxilla. Sovellus on testattu sekä uudella, että vanhalla tietokannalla ja todettu toimivaksi.
+
+### Toiminnallisuudet
+
+Määrittelydokumentin "vaatimat" toiminallisuudet on manuaalisesti testattu sekä hyväksyttävillä, että virheellisillä syötteillä. 
+
+## Laatuongelmia
+
+- Sovelluksen grafiikat ovat kehnot
+- Tietoja tallennetaan vain paikalliseen tietokantaan
+- Testauksessa ei käytetä testitietokantaa
