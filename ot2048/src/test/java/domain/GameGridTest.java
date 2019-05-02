@@ -203,7 +203,71 @@ public class GameGridTest {
         assertEquals(4, shouldBeFour);
         
     }
-  
     
+    @Test
+    public void moveEveryNumberUpMethodMovesEveryNumberUpOnce(){
+        
+        testGrid.moveEveryNumberUp();
+        
+        int shouldBeOne = testGrid.getGrid()[1][1];
+        
+        assertEquals(1, shouldBeOne);
+    }
+  
+    @Test
+    public void combineUpMethodCombinesNumbersIfTheyAreEqual() {
+        testGrid.combineUp();
+        
+        int shouldBeTwo = testGrid.getGrid()[0][1];
+        
+        assertEquals(2, shouldBeTwo);
+    }
+    
+    
+    @Test
+    public void combineUpMethodDoesntCombineNumbersIfTheyAreNotEqual() {
+        testGrid.combineUp();
+        
+        int shouldBeTwo = testGrid.getGrid()[0][2];
+        
+        assertEquals(2, shouldBeTwo);
+    }
+    
+    @Test
+    public void moveUpMethodActsRight() {
+        testGrid.moveUp();
+        
+        int shouldBeTwo = testGrid.getGrid()[0][1];
+        int shouldBeFour = testGrid.getGrid()[0][3];
+        
+        assertEquals(2, shouldBeTwo);
+        assertEquals(4, shouldBeFour);
+        
+    }
+    
+    
+    @Test
+    public void moveDownMethodActsRight() {
+        testGrid.moveDown();
+        
+        int shouldBeTwo = testGrid.getGrid()[3][1];
+        int shouldBeFour = testGrid.getGrid()[3][3];
+        
+        assertEquals(2, shouldBeTwo);
+        assertEquals(4, shouldBeFour);
+        
+    }
+    
+    @Test
+    public void moveRIghtMethodActsRight() {
+        testGrid.moveRight();
+        
+        int shouldBeTwo = testGrid.getGrid()[3][3];
+        int shouldBeFour = testGrid.getGrid()[0][3];
+        
+        assertEquals(2, shouldBeTwo);
+        assertEquals(4, shouldBeFour);
+        
+    }
     
 }

@@ -22,10 +22,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -78,6 +80,13 @@ public class GameController implements Initializable {
     private Button quitGame;
     @FXML
     private Text saveText;
+    @FXML
+    private Text gameOverText;
+    
+    @FXML
+    private Button newGameButton;
+    @FXML
+    private Button viewHighScoresButton;
     
     @FXML
     private Text currentHighscore;
@@ -180,7 +189,20 @@ public class GameController implements Initializable {
                 break;
             }
         }
-
+        
+        
+    /**
+     * Metodi, joka huolehtii new Game napin kontrollista
+     * @param event -
+     */    
+@FXML
+private void newGameAction(ActionEvent event) { 
+        
+    gamegrid.newGame();
+    update();
+                    
+        
+}
 /**
  * Päivittää pelin näkymän samaksi, kuin luokan gamegrid olio
  */
@@ -193,13 +215,22 @@ public class GameController implements Initializable {
                 labels[y][x].setText(indexAsText);
                 
                 
+                if (Integer.valueOf(labels[y][x].getText()) > 8) {
+                    labels[y][x].setFont(new Font("Regular", 40));
+                } else {
+                    labels[y][x].setFont(new Font("Regular", 50));
+                }
+                
                 
                 
             }
         }
         
-        saveText.setText("");
+        if (gamegrid.gameOver()) {
+            gameOverText.setText("GAME OVER!");
+        }
         
+        saveText.setText("");
         
         
         
@@ -251,7 +282,24 @@ private void saveScoreAction(ActionEvent event) throws IOException, Exception {
     
         
 }
- 
+
+@FXML
+private void viewHighScoresAction(ActionEvent event) throws IOException, Exception { 
+    
+    openHighScores(new Stage());
+                    
+        
+}
+
+public void openHighScores(Stage stage) throws IOException, SQLException { 
+       
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("HighScores.fxml"));
+    Parent root = loader.load();
+    stage.setScene(new Scene(root));
+    stage.show();
+        
+        
+   }
  
  public void setLoggedIn(User user)  {
     this.loggedIn = user;

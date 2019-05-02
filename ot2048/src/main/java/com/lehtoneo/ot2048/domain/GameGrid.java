@@ -35,7 +35,7 @@ public class GameGrid {
  * että pelitaulukon yhden satunnaisen alkion arvo on yksi, ja muiden nolla.
  * @see #numberOneToRandomPlace() 
  */
-    public final void setUpGrid() {
+    public void setUpGrid() {
        
         for (int x = 0; x < 4; x++) {
             
@@ -424,6 +424,37 @@ public class GameGrid {
         }
         return biggest;
         
+    }
+    
+    
+    /**
+     * Tarkistaa onko peliloppu
+     * @return palauttaa true, jos peli on loppu, muuten false
+     */
+    public boolean gameOver() {
+               
+        GameGrid helpGrid1 = new GameGrid();
+        helpGrid1.setGrid(this.getGrid());
+               
+        GameGrid helpGrid2 = new GameGrid();
+        helpGrid2.setGrid(this.getGrid());
+               
+        GameGrid helpGrid3 = new GameGrid();
+        helpGrid3.setGrid(this.getGrid());
+               
+        GameGrid helpGrid4 = new GameGrid();
+        helpGrid4.setGrid(this.getGrid());
+               
+        helpGrid1.moveDown();
+        helpGrid2.moveUp();
+        helpGrid3.moveLeft();
+        helpGrid4.moveRight();
+               
+        if (this.equals(helpGrid1) && this.equals(helpGrid2) && this.equals(helpGrid3) && this.equals(helpGrid4)) {
+            return true;
+        }
+            
+        return false;
     }
     
     

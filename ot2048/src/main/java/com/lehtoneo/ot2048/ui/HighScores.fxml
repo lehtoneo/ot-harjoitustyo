@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="275.0" prefWidth="392.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="com.lehtoneo.ot2048.ui.HighScoresController">
+   <children>
+      <Text layoutX="180.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOP 3" />
+      <Text layoutX="26.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1." wrappingWidth="35.73697280883789" />
+      <Text fx:id="numberOneUser" layoutX="53.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="167.47010326385498" />
+      <Text layoutX="272.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SCORE" />
+      <Text layoutX="84.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text fx:id="numberTwoUser" layoutX="53.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="167.47010490298283" />
+      <Text layoutX="26.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2." wrappingWidth="35.73697280883789" />
+      <Text layoutX="26.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3." wrappingWidth="35.73697280883789" />
+      <Text fx:id="numberThreeUser" layoutX="53.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="141.33336639404297" />
+      <Text fx:id="numberOneScore" layoutX="244.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="91.33338129520416" />
+      <Text fx:id="numberTwoScore" layoutX="244.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="91.3333740234375" />
+      <Text fx:id="numberThreeScore" layoutX="249.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="81.33331298828125" />
+   </children>
+</AnchorPane>

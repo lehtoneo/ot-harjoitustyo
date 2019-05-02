@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -45,33 +46,39 @@ public class UserDao implements Dao {
 
     
       /**
- *Listaa kaikki tietokannan käyttäjät
- * @return lista käyttäjistä
+ *Tekee hashmapin, jossa tietokannan käyttäjät
+ * @return hashmap käyttäjistä siten, että mitä pienempi avaimen numero, sitä isompi avaimen osoittaman käyttäjänimen highscore on
      * @throws java.sql.SQLException -
  */
     @Override
-    public List<User> list() throws SQLException {
-        List<User> userList = new ArrayList<>();
+    public HashMap<Integer, String> list() throws SQLException {
+        HashMap<Integer, String> highScoreMap = new HashMap<>();
         Connection connection = DriverManager.getConnection("jdbc:h2:./kayttajatJaHighscoret", "sa", "");
         
-        PreparedStatement statement = connection.prepareStatement("SELECT username, password FROM User");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM User ORDER BY highscore DESC");
 
         
         ResultSet resultSet = statement.executeQuery();
         
+        
+        Integer i = 1;
+        
+        
         while (resultSet.next()) {
-            
             String username = resultSet.getString("username");
-            String password = resultSet.getString("password");
             
-            User user = new User(username, password);
-            
-            userList.add(user);
-            
+            highScoreMap.put(i, username);
+            i++;
         }
-        return userList;
+        
+        if (i == 1) {
+            return null;
+        }
+        return highScoreMap;
         
     }
+    
+    
     
    
   
@@ -171,7 +178,7 @@ public class UserDao implements Dao {
         
         if (!rs.next()) {
             return new User("quest00", "");
-        };
+        }
         
         Integer questnumber = rs.getInt("id");
         questnumber++;
