@@ -1,5 +1,8 @@
 # Käyttöohje
 
+### Lataaminen
+
+Lataa sovellus painamalla linkkiä [ot2048.jar](https://github.com/lehtoneo/ot-harjoitustyo/releases/download/Viikko7/ot2048.jar)
 
 ### Kirjautuminen
 Sovellus aukeaa tällä näkymällä.
