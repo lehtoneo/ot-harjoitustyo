@@ -61,3 +61,5 @@ com.mycompany.ot2048.dao pakkauksesta löytyvä luokka UserDao huolehtii käytt�
 
 Sovelluksessa käyttäjien tiedot, eli käyttäjänimi, salasana sekä highscore tallennetaan yhteen tietokantaan, nimeltään kayttajatJaHighscoret. Tietokannassa on yksi taulu, joka on seuraavanlainen:
 - [User|id;username;password;highscore]
+
+## Sovelluksen heikkouksia
