@@ -26,4 +26,4 @@
 |      | 2    | Paransin sekä lisäsin testejä|
 |      | 1    | Tein testausdokumentin|
 |      | 1    | Päivitin määrittelydokumentin ajantasalle, sekä paransin käyttöohjetta|
-| yht   | 7   |  | 
+| yht   | 42   |  | 
