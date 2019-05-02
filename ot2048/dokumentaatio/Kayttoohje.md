@@ -4,6 +4,8 @@
 
 Lataa sovellus painamalla linkkiä [ot2048.jar](https://github.com/lehtoneo/ot-harjoitustyo/releases/download/Viikko7/ot2048.jar)
 
+Sovellus kannattaa siirtää pois ladatuista tiedostoista, sillä jos sovellus sijaitsee ladatuissa tiedostoissa, se ei välttämättä toimi halutullu tavalla.
+
 ### Kirjautuminen
 Sovellus aukeaa tällä näkymällä.
 
@@ -29,4 +31,8 @@ Kun on joko kirjautunut omilla tunnuksillaan tai questina peliin, pääsee peli 
 
 <img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/ohtePeliKuva.JPG">
 
-Peliä voi pelata näppäimillä a, s, w ja d. A liikuttaa ruudukkoa vasemmalle, s alas, d oikealle ja w ylös. Mikäli haluaa tallentaa omat pisteensä, voi painaa save score nappia. Alhaalla näkyy tämän hetkinen tallennettu highscore. Quit game napilla poistutaan pelistä (tallentamatta) ja avataan taas log in screen.
+Peliä voi pelata näppäimillä a, s, w ja d. A liikuttaa ruudukkoa vasemmalle, s alas, d oikealle ja w ylös. Mikäli haluaa tallentaa omat pisteensä, voi painaa save score nappia. Alhaalla näkyy tämän hetkinen tallennettu highscore. Quit game napilla poistutaan pelistä (tallentamatta) ja avataan taas log in screen. 
+
+### New game ja highscoret
+
+
