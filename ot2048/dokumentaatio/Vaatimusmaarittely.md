@@ -10,9 +10,8 @@ Sovellukseen voi kirjautua joko omalla käyttäjätunnuksellaan tai "questina".
 
 ## Käyttöliittymäluonnos
 
-Sovelluksessa on kolme eri näkymää (Log in, create acc, game)
+Sovelluksessa on neljä eri näkymää (Log in, create acc, game, highscoret)
 
-(KUVA)
 
 
 
@@ -22,7 +21,7 @@ Sovelluksessa on kolme eri näkymää (Log in, create acc, game)
 
 - Käyttäjä voi kirjautua sovellukseen (Questina tai omalla käyttäjätunnuksellaan)
 
-  - Vaatii käyttäjätunnuksen ja salasanan
+  - Vaatii käyttäjätunnuksen ja salasanan, jos ei kirjaudu questina
   
 - Käyttäjä voi luoda käyttäjätunnuksen
 
@@ -35,6 +34,7 @@ Sovelluksessa on kolme eri näkymää (Log in, create acc, game)
    - Pelin voi aloittaa alusta painamalla "New Game"
    
  - Käyttäjä voi kirjautua ulos pelistä
+ - Käyttäjä voi tallentaa highscoret, sekä tarkastella highscoreja painamalla view highscore nappia
  
  
  ## Jatkokehitysideoita
