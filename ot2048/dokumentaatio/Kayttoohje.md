@@ -35,4 +35,4 @@ Peliä voi pelata näppäimillä a, s, w ja d. A liikuttaa ruudukkoa vasemmalle,
 
 ### New game ja highscoret
 
-<imt src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/highScoreKuva.JPG">
+<img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/highScoreKuva.JPG">
