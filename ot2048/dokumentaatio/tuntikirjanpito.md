@@ -22,4 +22,8 @@
 |       | 1    | Refaktoroin koodia |
 |       | 2    | Paransin testikattavuutta |
 |       | 1    | Paransin testejä |
-| yht   | 35   |  | 
+|2.5   | 3    | Lisäsin highscore näkymän|
+|      | 2    | Paransin sekä lisäsin testejä|
+|      | 1    | Tein testausdokumentin|
+|      | 1    | Päivitin määrittelydokumentin ajantasalle, sekä paransin käyttöohjetta|
+| yht   | 7   |  | 
