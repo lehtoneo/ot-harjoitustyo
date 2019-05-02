@@ -18,3 +18,4 @@ Userdaota testataan luomalla väliaikaisia käyttäjiä sovelluksen tietokantaan
 
 ### Testikattavuus
 
+<img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/testiKattavuus.JPG" width = "600">
