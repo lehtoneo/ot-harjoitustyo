@@ -6,14 +6,14 @@ Käyttöliittymässä on neljä erilaista näkymää.
 - Uuden käyttäjän luomisnäkymä
 - Top 3 highscoret
 
-näykmät ovat toteutettu fxml tiedostoina, jotka avataan FXMLLoaderin avulla niihin siirryttäessä. Jokaisen käyttöliittymäkomponentin toiminnallisuudesta vastaa komponentin oma eventHandler metodi. EventHandlerit sitten kutsuvat sopivalla tavalla sovelluslogiikan (sekä hieman käyttöliittymän) metodeja. 
+näykmät ovat toteutettu fxml tiedostoina, jotka avataan FXMLLoaderin avulla niihin siirryttäessä. Jokaisen käyttöliittymäkomponentin toiminnallisuudesta vastaa komponenttien omat eventHandler metodit, jotka sijaitsevat Controller luokissa. EventHandlerit sitten kutsuvat sopivalla tavalla sovelluslogiikan (sekä muita käyttöliittymän) metodeja. 
 
 ## Sovelluslogiikka
 Sovelluksen loogisen datamallin muodostavat luokat gamegrid ja user. GameGrid sisältää kaikki peliin liittyvät toiminnot. User luokka kuvaa käyttäjää.
 
 
-Luokat ot2048service, gamegrid sekä UserDao ovat vastuussa toiminnallisesta kokonaisuudet.
-UserDao tarjoaa mm. seuraavat metodit suoraa käyttöliittymälle:
+Luokat ot2048service, gamegrid sekä UserDao ovat vastuussa toiminnallisesta kokonaisuudesta.
+UserDao tarjoaa mm. seuraavat metodit suoraan käyttöliittymälle:
 
 - void create(User user)
 - Integer getHighscore(User user)
@@ -57,11 +57,19 @@ Mikäli käyttäjä on syöttänyt "create a new user" -ikkunassa username kentt
  Tässä oletetaan, että käyttäjä on syöttänyt käyttäjänimeksi "username", sekä salasanaksi "password".
  Kun käyttäjä painaa nappia submit, CreateUserController kutsuu ot2048Serviceä tarkistamaan, ovatko salasanat samoja. Koska ovat, selvitetään onko käyttäjää olemassa. Koska ei ole, luodaan metodin sisällä user olio "NewUser". Tämän jälkeen tarkistetaan User luokan metodeilla, onko käyttäjätunnus ja salasana hyväksyttäviä. Koska ovat, luodaan UserDaon avulla uusi käyttäjä sovellukseen. Tämän jälkeen ruudulle ilmestyy teksti "User created succesfully".
 
-## Kirjautuminen käyttäjätunnuksilla
+### Kirjautuminen käyttäjätunnuksilla
 
 Mikäli käyttäjä on luonut itselleen tunnuksen, sekä syöttänyt tunnuksen oikein log in screenin kenttiin, etenee sovellus seuraavalla tavalla.
 
 <img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/logInSekvenssi.JPG">
+
+### Pelin toiminta
+
+Itse peli toimii siten, että sen käyttöliittymän pohjalla on 4x4 kokoinen grid-olio, jonka sisälle on scene builderin avulla alustettu jokaiseen gridin alkioon label, jonka alkutekstinä on 0. Kun tiedosto game.fxml avataan, GameController luokan initialize() metodia kutsutaan. Tämä  initialize() -metodi sitten alustaa uuden GameGrid-olion, jonka jälkeen grid-olion sisällä olevat labelit alustetaan vastaamaan GameGrid olion alkioita (eli siis se taulukon kohta, joka GameGrid oliossa on 1, on nyt myös grid-olion labeleissa numero 1 ja loput nollia). Tämän jälkeen käyttäjältä jäädään odottamaan jonkun napin a, s, d tai w painallusta. Kun käyttäjä painaa esimerkiksi nappia "W", keyPressed(KeyEvent event) metodi tunnistaa tämän ja kutsuu GameGridin metodia moveUp(). Tämän jälkeen keyPressed(KeyEvent event) kutsuu oman luokkansa metodia update(), joka päivittää grid-olion sisällä olevat labelit vastaamaan GameGrid-olion numeroarvoja. 
+
+### muita toiminnallisuuksia
+
+Muut toiminnallisuudet, eli 
 
 ## Tietojen tallennus paikalliseen tietokantaan
 com.mycompany.ot2048.dao pakkauksesta löytyvä luokka UserDao huolehtii käyttäjän tietojen tallentamisesta tietokantaan.
