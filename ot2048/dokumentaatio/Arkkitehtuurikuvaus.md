@@ -69,7 +69,7 @@ Itse peli toimii siten, että sen käyttöliittymän pohjalla on 4x4 kokoinen gr
 
 ### muita toiminnallisuuksia
 
-Muut toiminnallisuudet, eli 
+Muut toiminnallisuudet, eli erilaisten nappien painallukset noudattaa samanlaista kaavaa: eventHandler -metodeita kutsutaan, jotka sitten sopivalla tavalla kutsuvat ot2048Servicen, GameGridin ja/tai UserDao luokkien metodeita. Tämän jälkeen käyttöliittymää päivitetään näyttämään sovelluslogiikan tekemät muutokset, jos tarvetta.
 
 ## Tietojen tallennus paikalliseen tietokantaan
 com.mycompany.ot2048.dao pakkauksesta löytyvä luokka UserDao huolehtii käyttäjän tietojen tallentamisesta tietokantaan.
@@ -79,4 +79,13 @@ com.mycompany.ot2048.dao pakkauksesta löytyvä luokka UserDao huolehtii käytt�
 Sovelluksessa käyttäjien tiedot, eli käyttäjänimi, salasana sekä highscore tallennetaan yhteen tietokantaan, nimeltään kayttajatJaHighscoret. Tietokannassa on yksi taulu, joka on seuraavanlainen:
 - [User|id;username;password;highscore]
 
-## Sovelluksen heikkouksia
+## Rakenteen heikkoudet
+
+### Gamegrid-luokka
+
+GameGrid -luokassa on hieman copypasten tyyppistä koodia, joka olisi tietenkin hyvä saada pois. Tyyli, jolla pelin toiminnallisuus eli numeroiden liikuttelu eri suuntiin on toteutettu, on kuitenkin sellainen, että samanlaista koodia syntyy väkisinkin aika paljon. Koodi on lisäksi melko kryptistä, joka vaikeuttaa tietenkin sen lukemista.
+
+### Pelin toteutus
+
+Tyyli, jolla itse peli/pelaaminen on toteutettu (ks. pelin toiminta), on sellainen, joka ei hirveästi mahdollista jatkokehittämistä kuten animaatioiden lisäämistä. 
+
