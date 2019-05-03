@@ -1,17 +1,18 @@
 # Arkkitehtuurikuvaus
 ## Käyttöliittymä
-Sovelluksen käyttöliittymässä on kolme erilaista näkymää.
+Käyttöliittymässä on neljä erilaista näkymää.
 - Kirjautumisnäkymä
 - Pelinäkymä
 - Uuden käyttäjän luomisnäkymä
+- Top 3 highscoret
 
-näykmät ovat toteutettu fxml tiedostoina, jotka avataan FXMLLoaderin avulla niihin siirryttäessä. Jokaisen käyttöliittymäkomponentin toiminnallisuudesta vastaa komponentin oma eventHandler metodi. EventHandlerit sitten kutsuvat sopivalla tavalla sovelluslogiikan (sekä hieman käyttöliittymän) metodeja.
+näykmät ovat toteutettu fxml tiedostoina, jotka avataan FXMLLoaderin avulla niihin siirryttäessä. Jokaisen käyttöliittymäkomponentin toiminnallisuudesta vastaa komponentin oma eventHandler metodi. EventHandlerit sitten kutsuvat sopivalla tavalla sovelluslogiikan (sekä hieman käyttöliittymän) metodeja. 
 
 ## Sovelluslogiikka
 Sovelluksen loogisen datamallin muodostavat luokat gamegrid ja user. GameGrid sisältää kaikki peliin liittyvät toiminnot. User luokka kuvaa käyttäjää.
 
 
-Käyttöliittymän toimminnallisesta kokonaisuudesta vastaavat luokat ot2048service, sekä UserDao.
+Luokat ot2048service, gamegrid sekä UserDao ovat vastuussa toiminnallisesta kokonaisuudet.
 UserDao tarjoaa mm. seuraavat metodit suoraa käyttöliittymälle:
 
 - void create(User user)
@@ -26,6 +27,13 @@ Ot2048Service tarjoaa metodit kuten:
 - User getLoggenIn()
 - boolean isPasswordCorrect()
 
+GameGridin metodeja kuten:
+- moveRight()
+- moveUp()
+- moveDown()
+- moveLeft()
+
+käytetään pelin toiminnallisuuteen.
 
 
 
@@ -33,7 +41,8 @@ Ot2048Service tarjoaa metodit kuten:
 
 
 
-Pakkauskaavio, josta puuttuu main luokka setUpLogInUI, jolla ei ole varsinaisesti mitään muuta tehtävää, kuin avata log in näkymä, sekä luoda tietokanta juurikansioon, mikäli sitä ei ole olemassa.
+
+Pakkauskaavio, josta puuttuu main luokka setUpLogInUI, jolla ei ole varsinaisesti mitään muuta tehtävää, kuin avata log in näkymä, sekä luoda tietokanta juurikansioon, mikäli sitä ei ole olemassa. Pakkauskaaviosta puuttuuu myös HighScoreController -luokka, jonka tehtävänä on ainoastaan avata highscore näkymä.
 <img src="https://github.com/lehtoneo/ot-harjoitustyo/blob/master/ot2048/dokumentaatio/kuvia/uusiPakkausKaavioKuva.JPG">
 
 ## Päätoiminnallisuudet
