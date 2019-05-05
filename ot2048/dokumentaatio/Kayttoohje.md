@@ -6,6 +6,10 @@ Lataa sovellus painamalla linkkiä [ot2048.jar](https://github.com/lehtoneo/ot-h
 
 Sovellus kannattaa siirtää pois ladatuista tiedostoista, sillä jos sovellus sijaitsee ladatuissa tiedostoissa, se ei välttämättä toimi halutullu tavalla.
 
+### Käynnistys
+
+Sovelluksen saa käynnistettyä komennolla   java -jar ot2048.jar
+
 ### Kirjautuminen
 Sovellus aukeaa tällä näkymällä.
 
