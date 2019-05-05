@@ -1,20 +1,12 @@
 package com.lehtoneo.ot2048.ui;
 
-import com.lehtoneo.ot2048.dao.UserDao;
-import com.lehtoneo.ot2048.domain.User;
 import com.lehtoneo.ot2048.domain.User;
 import com.lehtoneo.ot2048.dao.UserDao;
 import com.lehtoneo.ot2048.domain.Ot2048Service;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
